@@ -1,0 +1,112 @@
+/* FitnessTracker yasal sayfalari - ortak stil.
+   Her sayfa bunu <link> ile cagiriyor; tek dosyadan degistiriliyor. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --panel: #f7f7f8;
+  --ink: #17181b;
+  --ink-2: #4a4d54;
+  --ink-3: #75787f;
+  --rule: #e2e3e6;
+  --accent: #17181b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1012;
+    --panel: #17181b;
+    --ink: #f0f1f3;
+    --ink-2: #b9bcc2;
+    --ink-3: #85888f;
+    --rule: #2a2b2f;
+    --accent: #ffffff;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding-block: 32px;
+  padding-inline: 20px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+main { max-width: 760px; margin: 0 auto; }
+
+header.doc {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+.app-name {
+  font-size: 13px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 8px;
+}
+
+h1 { font-size: 30px; line-height: 1.2; margin: 0 0 10px; letter-spacing: -.02em; }
+h2 { font-size: 20px; margin: 36px 0 10px; letter-spacing: -.01em; }
+h3 { font-size: 16px; margin: 24px 0 8px; }
+
+.updated { color: var(--ink-3); font-size: 14px; margin: 0; }
+
+p { margin: 0 0 14px; color: var(--ink-2); }
+li { color: var(--ink-2); margin-bottom: 7px; }
+ul, ol { padding-left: 22px; margin: 0 0 14px; }
+
+strong { color: var(--ink); font-weight: 600; }
+
+a { color: var(--ink); text-underline-offset: 3px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 18px;
+  font-size: 15px;
+}
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  color: var(--ink-2);
+}
+th { color: var(--ink); font-weight: 600; background: var(--panel); }
+
+.box {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 0 0 18px;
+}
+.box p:last-child { margin-bottom: 0; }
+
+.warn { border-left: 4px solid #d98600; }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  padding-top: 24px;
+  margin-top: 36px;
+  border-top: 1px solid var(--rule);
+  font-size: 14px;
+}
+.nav a { color: var(--ink-3); text-decoration: none; }
+.nav a:hover { color: var(--ink); text-decoration: underline; }
+
+footer.doc {
+  margin-top: 28px;
+  color: var(--ink-3);
+  font-size: 13px;
+}
+
+.table-wrap { overflow-x: auto; }

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gizlilik Politikası — FitnessTracker</title>
+<meta name="description" content="FitnessTracker uygulamasının hangi verileri topladığı, nerede sakladığı ve nasıl sildiği.">
+<link rel="stylesheet" href="ortak.css">
+</head>
+<body>
+<main>
+
+<header class="doc">
+  <p class="app-name">FitnessTracker</p>
+  <h1>Gizlilik Politikası</h1>
+  <p class="updated">Yürürlük tarihi: 15 Eylül 2026</p>
+</header>
+
+<p>
+  Bu metin, FitnessTracker uygulamasının hangi bilgileri topladığını, bunları
+  nerede sakladığını, kimlerle paylaştığını ve nasıl sileceğinizi anlatır.
+  Kısa tutmaya ve gerçekte ne yaptığımızı yazmaya çalıştık.
+</p>
+
+<div class="box">
+  <p><strong>Özet:</strong> Uygulamayı kullanmak için bir hesap açmanız gerekiyor
+  ve yalnızca <strong>hesabınıza ait bilgiler</strong> (e-posta adresiniz ve
+  hesap kimliğiniz) Google'ın sunucularında tutuluyor. <strong>Fitness
+  verileriniz</strong> — kilonuz, öğünleriniz, egzersizleriniz, su takibiniz —
+  yalnızca <strong>telefonunuzda</strong> duruyor; bize ya da başka birine
+  gönderilmiyor. Reklam yok, analiz aracı yok, veri satışı yok.</p>
+</div>
+
+<h2>1. Veri sorumlusu</h2>
+
+<p>
+  Uygulamanın geliştiricisi ve bu metin kapsamında veri sorumlusu:
+</p>
+<ul>
+  <li><strong>Uygulama:</strong> FitnessTracker (<code>efekesler.fitness</code>)</li>
+  <li><strong>İletişim:</strong> fitness.tracker.2027@gmail.com</li>
+</ul>
+
+<h2>2. Hangi verileri işliyoruz</h2>
+
+<h3>Google'ın sunucularında tutulanlar (Firebase Authentication)</h3>
+
+<p>
+  Hesabınızı oluşturmak ve girişinizi doğrulamak için Google'ın Firebase
+  Authentication hizmetini kullanıyoruz. Orada şunlar tutuluyor:
+</p>
+
+<div class="table-wrap">
+<table>
+  <tr><th>Veri</th><th>Neden</th></tr>
+  <tr><td>E-posta adresiniz</td><td>Hesabınızı tanımlamak, giriş yapmanızı sağlamak, şifre sıfırlama e-postası gönderebilmek</td></tr>
+  <tr><td>Şifreniz (geri döndürülemez biçimde şifrelenmiş)</td><td>Girişinizi doğrulamak. Düz hâli hiçbir yerde tutulmaz; <strong>geliştirici dahil kimse göremez</strong></td></tr>
+  <tr><td>Adınız</td><td>Uygulamada size ismen hitap etmek</td></tr>
+  <tr><td>Hesap kimliği (uid)</td><td>Telefonunuzdaki verilerin hangi hesaba ait olduğunu bilmek</td></tr>
+  <tr><td>Hesap oluşturma ve son giriş tarihi</td><td>Firebase tarafından otomatik tutulur</td></tr>
+  <tr><td>Bağlantı bilgileri (IP adresi gibi)</td><td>Firebase tarafından güvenlik ve kötüye kullanım önleme amacıyla otomatik kaydedilir</td></tr>
+</table>
+</div>
+
+<p>
+  Google ile giriş yapmayı seçerseniz Google bize <strong>yalnızca</strong>
+  adınızı ve e-posta adresinizi bildirir. Google hesabınızın şifresini
+  görmüyoruz, Google hesabınızdaki başka hiçbir bilgiye (kişileriniz,
+  dosyalarınız, takviminiz) erişmiyoruz.
+</p>
+
+<h3>Yalnızca telefonunuzda tutulanlar</h3>
+
+<p>
+  Aşağıdaki bilgiler telefonunuzun kendi deposunda, uygulamanın özel alanında
+  saklanır. <strong>Hiçbiri internete gönderilmez</strong>, bizim onlara
+  erişimimiz yoktur:
+</p>
+
+<ul>
+  <li>Cinsiyet, yaş, boy, kilo</li>
+  <li>Hareket düzeyiniz ve hedef türünüz (kilo verme, koruma, alma)</li>
+  <li>Günlük kalori, adım ve su hedefleriniz</li>
+  <li>Girdiğiniz öğünler (kalori miktarı ve isteğe bağlı notunuz)</li>
+  <li>Kaydettiğiniz egzersizler (tür, süre, yoğunluk, kalori)</li>
+  <li>Günlük su ve adım kayıtlarınız</li>
+</ul>
+
+<div class="box warn">
+  <p><strong>Bunun önemli bir sonucu var:</strong> fitness verileriniz
+  yedeklenmiyor. Telefonunuzu kaybeder, uygulamayı silerseniz ya da yeni bir
+  telefona geçerseniz, hesabınızla giriş yapabilirsiniz ama
+  <strong>geçmiş kayıtlarınız gelmez</strong>. Bunu ileride değiştirmeyi
+  planlıyoruz; değiştirdiğimizde bu metni güncelleyeceğiz.</p>
+</div>
+
+<h2>3. Toplamadıklarımız</h2>
+
+<p>Uygulama şunları <strong>istemez, okumaz ve toplamaz</strong>:</p>
+<ul>
+  <li>Konumunuz</li>
+  <li>Kişileriniz, mesajlarınız, fotoğraflarınız veya dosyalarınız</li>
+  <li>Telefonunuzdaki diğer uygulamalar</li>
+  <li>Kamera ve mikrofon</li>
+  <li>Sağlık sensörleri (nabız gibi)</li>
+</ul>
+
+<p>
+  Uygulamanın istediği tek izin <strong>internet erişimi</strong>dir; o da
+  yalnızca giriş ve kayıt işlemleri için kullanılır.
+</p>
+
+<p>
+  Uygulamada <strong>reklam yoktur</strong>, <strong>analiz veya izleme aracı
+  yoktur</strong> (Google Analytics, Firebase Analytics, Crashlytics ve benzeri
+  hiçbiri kullanılmıyor). Kullanım alışkanlıklarınız takip edilmiyor.
+</p>
+
+<h2>4. Verileri neden işliyoruz</h2>
+
+<ul>
+  <li><strong>Sözleşmenin ifası:</strong> Hesap açmadan uygulama
+      çalışmadığı için e-posta ve şifre bilgisi zorunludur.</li>
+  <li><strong>Meşru menfaat:</strong> Firebase'in tuttuğu bağlantı kayıtları,
+      hesapların kötüye kullanımını önlemek içindir.</li>
+  <li><strong>Açık rıza:</strong> Fitness bilgilerinizi (kilo, öğün, egzersiz)
+      siz girersiniz ve telefonunuzda kalır. Girmeyebilirsiniz de; uygulama
+      profil kurulumunu atlamanıza izin verir.</li>
+</ul>
+
+<h2>5. Kimlerle paylaşılıyor</h2>
+
+<p>
+  Verilerinizi <strong>satmıyoruz</strong>, reklam amacıyla
+  <strong>paylaşmıyoruz</strong>. Hesap bilgileriniz yalnızca tek bir hizmet
+  sağlayıcıda tutulur:
+</p>
+
+<ul>
+  <li><strong>Google Firebase Authentication</strong> — kimlik doğrulama
+      altyapısı. Google, bu bilgileri kendi sunucularında işler.
+      Google'ın gizlilik politikası:
+      <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+</ul>
+
+<p>
+  Bunun dışında, yasal bir zorunluluk olmadıkça (mahkeme kararı gibi) hiçbir
+  bilgiyi kimseyle paylaşmıyoruz.
+</p>
+
+<p>
+  Firebase sunucuları yurt dışında bulunabilir. Hesap açarak, hesap
+  bilgilerinizin bu şekilde yurt dışına aktarılmasını kabul etmiş olursunuz.
+</p>
+
+<h2>6. Ne kadar süre saklanıyor</h2>
+
+<ul>
+  <li><strong>Hesap bilgileriniz:</strong> Hesabınızı silene kadar. Sildiğinizde
+      Firebase'den de silinir.</li>
+  <li><strong>Telefonunuzdaki fitness verileriniz:</strong> Siz silene ya da
+      uygulamayı kaldırana kadar. Uygulamayı kaldırdığınızda bu veriler
+      telefonunuzdan tamamen gider.</li>
+  <li><strong>Firebase'in güvenlik kayıtları:</strong> Google'ın kendi saklama
+      süreleri geçerlidir.</li>
+</ul>
+
+<h2>7. Hesabınızı ve verilerinizi silme</h2>
+
+<p>İki yolu var:</p>
+
+<ol>
+  <li><strong>Uygulama içinden:</strong> Profil sekmesi → <em>Hesabımı sil</em>.
+      Onayladığınızda hesabınız Firebase'den, verileriniz telefonunuzdan
+      hemen silinir.</li>
+  <li><strong>E-posta ile:</strong> fitness.tracker.2027@gmail.com adresine, hesabınızın e-posta
+      adresinden silme talebi gönderin. Talebinizi en geç 30 gün içinde
+      sonuçlandırırız.</li>
+</ol>
+
+<p>
+  Ayrıntılar için <a href="hesap-silme.html">hesap silme sayfasına</a> bakın.
+</p>
+
+<h2>8. Güvenlik</h2>
+
+<ul>
+  <li>Şifreniz Google tarafından geri döndürülemez biçimde şifrelenerek
+      saklanır; düz hâli hiçbir yerde bulunmaz.</li>
+  <li>Uygulama ile Firebase arasındaki tüm iletişim şifrelidir (HTTPS).</li>
+  <li>Telefonunuzdaki veriler, Android'in uygulamalara ayırdığı özel alanda
+      tutulur; başka uygulamalar bu alanı okuyamaz.</li>
+</ul>
+
+<p>
+  Yine de hiçbir sistem tamamen güvenli değildir. Hesabınızı korumak için
+  güçlü ve başka yerde kullanmadığınız bir şifre seçmenizi öneririz.
+</p>
+
+<h2>9. Çocuklar</h2>
+
+<p>
+  Uygulama <strong>13 yaşın altındakiler için tasarlanmamıştır</strong> ve
+  profil kurulumunda 13'ten küçük bir yaş girilemez. 13 yaşın altında bir
+  kullanıcıya ait hesap açıldığını fark edersek sileriz.
+</p>
+
+<h2>10. Haklarınız</h2>
+
+<p>
+  6698 sayılı Kişisel Verilerin Korunması Kanunu'nun 11. maddesi uyarınca;
+  kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse bilgi talep
+  etme, amacına uygun kullanılıp kullanılmadığını öğrenme, yurt içinde veya
+  dışında aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmişse
+  düzeltilmesini isteme, silinmesini veya yok edilmesini isteme ve işlemenin
+  münhasıran otomatik sistemlerle analiz edilmesi suretiyle aleyhinize bir
+  sonuç doğmasına itiraz etme haklarına sahipsiniz.
+</p>
+
+<p>
+  Bu hakları kullanmak için fitness.tracker.2027@gmail.com adresine yazmanız yeterli. Talebinizi
+  en geç 30 gün içinde yanıtlarız. Verilerinizin çoğu zaten telefonunuzda ve
+  doğrudan sizin kontrolünüzde; hesabınızı da uygulama içinden kendiniz
+  silebilirsiniz.
+</p>
+
+<h2>11. Bu metinde değişiklik</h2>
+
+<p>
+  Uygulama değiştikçe bu metin de değişebilir. Önemli bir değişiklik olursa
+  yürürlük tarihini güncelleriz ve uygulama içinde bildiririz. Özellikle
+  verilerin buluta taşınması gibi bir değişiklik olursa bunu açıkça yazarız.
+</p>
+
+<h2>12. İletişim</h2>
+
+<p>
+  Sorularınız için: <strong>fitness.tracker.2027@gmail.com</strong>
+</p>
+
+<nav class="nav">
+  <a href="index.html">Ana sayfa</a>
+  <a href="kosullar.html">Kullanım Koşulları</a>
+  <a href="hesap-silme.html">Hesap Silme</a>
+  <a href="privacy.html">English</a>
+</nav>
+
+<footer class="doc">
+  FitnessTracker — Gizlilik Politikası, 15 Eylül 2026
+</footer>
+
+</main>
+</body>
+</html>
