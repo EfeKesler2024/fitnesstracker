@@ -13,7 +13,7 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Account and Data Deletion</h1>
-  <p class="updated">Updated: 15 September 2026</p>
+  <p class="updated">Updated: 28 September 2026</p>
 </header>
 
 <p>
@@ -31,56 +31,95 @@
 </ol>
 
 <p>
-  Your account and data are deleted as soon as you confirm. This action
-  <strong>cannot be undone</strong>.
+  As soon as you confirm, your account, your data in the cloud and the data on
+  this phone are deleted. This action <strong>cannot be undone</strong>.
 </p>
+
+<div class="box warn">
+  <p>
+    <strong>If you have an AI Coach subscription:</strong> Deleting your account
+    <strong>does not cancel</strong> your Google Play subscription, and you will
+    keep being charged. Cancel it separately in <em>Google Play → Payments &amp;
+    subscriptions → Subscriptions</em>.
+  </p>
+</div>
 
 <div class="box">
   <p>
-    If you have not signed in for a long time, the app may ask you to sign in
-    once more before deleting. This is a security measure so that someone who
-    picks up your phone cannot delete your account.
+    If you have not signed in within the last few minutes, the app asks you to
+    sign in once more before deleting. This is a security measure, so that
+    your account cannot be deleted if someone else gets hold of your phone.
+    Deletion also needs an internet connection: so that your account is never
+    deleted while your cloud data remains, the process does not start without
+    one, and you can try again once you are back online.
   </p>
 </div>
 
 <h2>Option 2 — Request by email</h2>
 
 <p>
-  If you cannot reach the app — lost phone, app already uninstalled — write to:
+  If you cannot access the app (you lost your phone, uninstalled the app,
+  and so on), write to:
 </p>
 
 <p style="font-size:18px"><strong>fitness.tracker.2027@gmail.com</strong></p>
 
 <ul>
-  <li>Send the request <strong>from the email address of your account</strong>;
-      this is how we verify your identity</li>
-  <li>Subject line: <strong>"Account deletion request"</strong></li>
-  <li>We complete requests within <strong>30 days</strong> at the latest and
-      confirm when done</li>
+  <li>Send the request <strong>from your account's email address</strong>; this
+      is how we verify your identity</li>
+  <li>Writing <strong>"Account deletion request"</strong> in the subject line is
+      enough</li>
+  <li>We will complete your request and let you know within
+      <strong>30 days</strong> at the latest</li>
 </ul>
 
-<h2>What gets deleted</h2>
+<h2>What is deleted</h2>
 
 <div class="table-wrap">
 <table>
   <tr><th>Data</th><th>Where</th><th>What happens</th></tr>
   <tr>
-    <td>Email address, name, password, account identifier</td>
+    <td>Your email address, name, password, account ID</td>
+    <td>Firebase Authentication (Google servers)</td>
+    <td><strong>Deleted</strong></td>
+  </tr>
+  <tr>
+    <td>Your profile (age, height, weight, sex, goals), meals, saved meals,
+        workouts, water, step and weight logs, saved programs</td>
+    <td>Firebase Firestore (Google servers) and your phone</td>
+    <td><strong>Deleted</strong></td>
+  </tr>
+  <tr>
+    <td>Your AI Coach chat history and AI Coach consent choices</td>
+    <td>Your phone only</td>
+    <td><strong>Deleted</strong></td>
+  </tr>
+  <tr>
+    <td>Your AI Coach subscription link and remaining-questions indicator</td>
     <td>Firebase (Google servers)</td>
     <td><strong>Deleted</strong></td>
   </tr>
   <tr>
-    <td>Profile: age, height, weight, gender, goals</td>
-    <td>Your phone</td>
-    <td><strong>Deleted</strong></td>
+    <td>Irreversible digest of the purchase token and that day's question count
+        (no name or email)</td>
+    <td>Firebase (Google servers)</td>
+    <td><strong>Deleted automatically after 48 hours.</strong> This prevents the
+        same day's question allowance from being reset by deleting and
+        recreating an account</td>
   </tr>
   <tr>
-    <td>Meal, water and workout records</td>
-    <td>Your phone</td>
-    <td><strong>Deleted</strong></td>
+    <td>Questions you previously sent to AI Coach</td>
+    <td>OpenAI</td>
+    <td>Never stored on our server. OpenAI's own retention periods apply on its
+        side</td>
   </tr>
   <tr>
-    <td>Firebase connection and security logs</td>
+    <td>Your Google Play purchase and payment history</td>
+    <td>Google Play</td>
+    <td>Stays in your Google account; subject to Google's rules</td>
+  </tr>
+  <tr>
+    <td>Connection and security records kept by Firebase</td>
     <td>Google servers</td>
     <td>May remain for Google's own retention periods</td>
   </tr>
@@ -88,18 +127,30 @@
 </div>
 
 <p>
-  After deletion <strong>no personal data of yours remains</strong> in our
-  hands. You may register again with the same email address, but your old
-  records will not return.
+  After deletion, apart from the digest kept for 48 hours as described above,
+  <strong>no personal data about you remains</strong> with us. You can sign up
+  again with the same email address, but your old records will not come back.
+  If your subscription is still valid, you can link it to your new account
+  with <em>Restore purchases</em>.
 </p>
 
 <h2>I only want to delete my data, not my account</h2>
 
 <p>
-  You can delete individual meal and workout records inside the app. To clear
-  everything at once without touching your account, use your phone's
-  <em>Settings → Apps → FitnessTracker → Storage → Clear data</em>.
+  You can delete meals, workouts and saved meals one by one in the app; a
+  deleted record is also removed from your other phones. If you want all of
+  your data deleted but your account kept, write to
+  fitness.tracker.2027@gmail.com from your account's email address; we will
+  complete your request within 30 days at the latest.
 </p>
+
+<div class="box">
+  <p>
+    Your phone's <em>Settings → Apps → FitnessTracker → Storage → Clear
+    data</em> only deletes the copy <strong>on this phone</strong>. Because your
+    data is kept in the cloud, it comes back when you sign in again.
+  </p>
+</div>
 
 <nav class="nav">
   <a href="index.html">Home</a>
@@ -109,7 +160,7 @@
 </nav>
 
 <footer class="doc">
-  FitnessTracker — Account Deletion, 15 September 2026
+  FitnessTracker — Account Deletion, 28 September 2026
 </footer>
 
 </main>

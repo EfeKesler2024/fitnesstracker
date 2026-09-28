@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — FitnessTracker</title>
-<meta name="description" content="What data FitnessTracker collects, where it is stored, and how to delete it.">
+<meta name="description" content="What data FitnessTracker collects, where it is stored, who it is shared with, and how to delete it.">
 <link rel="stylesheet" href="ortak.css">
 </head>
 <body>
@@ -13,214 +13,343 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Privacy Policy</h1>
-  <p class="updated">Effective date: 15 September 2026</p>
+  <p class="updated">Effective date: 28 September 2026</p>
 </header>
 
 <p>
   This page explains what information FitnessTracker collects, where it is
-  kept, who it is shared with, and how you can delete it. We have tried to
+  stored, who it is shared with and how you can delete it. We have tried to
   keep it short and to describe what the app actually does.
 </p>
 
 <div class="box">
-  <p><strong>In short:</strong> you need an account to use the app, and only
-  <strong>account information</strong> (your email address and account
-  identifier) is stored on Google's servers. Your <strong>fitness data</strong>
-  — weight, meals, workouts, water intake — stays <strong>on your phone
-  only</strong> and is never sent to us or anyone else. No ads, no analytics,
-  no data selling.</p>
+  <p><strong>Summary:</strong> You need an account to use the app. Your account
+  and the fitness data you enter (your profile, meals, workouts, water, step
+  and weight logs) are stored <strong>on Google Firebase servers, linked to
+  your account</strong>, so your records are not lost when you change phones.
+  <strong>Questions you ask AI Coach</strong> are sent to OpenAI to generate an
+  answer, but your name, email address and fitness data are not sent, and
+  questions and answers are not stored on our servers. No ads, no analytics,
+  no selling of data.</p>
 </div>
 
-<h2>1. Who is responsible</h2>
+<h2>1. Data controller</h2>
 
+<p>
+  The developer of the app and the data controller for this policy:
+</p>
 <ul>
+  <li><strong>Developer:</strong> Efe Kesler</li>
   <li><strong>App:</strong> FitnessTracker (<code>efekesler.fitness</code>)</li>
   <li><strong>Contact:</strong> fitness.tracker.2027@gmail.com</li>
 </ul>
 
-<h2>2. What we process</h2>
+<h2>2. What data we process</h2>
 
-<h3>Stored on Google's servers (Firebase Authentication)</h3>
+<h3>Account information (Firebase Authentication)</h3>
 
 <p>
-  We use Google's Firebase Authentication to create your account and verify
-  your sign-in. It stores:
+  We use Google's Firebase Authentication service to create your account and
+  verify your sign-in. It stores:
 </p>
 
 <div class="table-wrap">
 <table>
   <tr><th>Data</th><th>Why</th></tr>
-  <tr><td>Your email address</td><td>To identify your account, let you sign in, and send password reset emails</td></tr>
-  <tr><td>Your password (irreversibly hashed)</td><td>To verify your sign-in. The plain password is never stored and <strong>nobody, including the developer, can read it</strong></td></tr>
+  <tr><td>Your email address</td><td>To identify your account, let you sign in, and send verification and password reset emails</td></tr>
+  <tr><td>Your password (irreversibly hashed)</td><td>To verify your sign-in. The plain password is never stored; <strong>nobody, including the developer, can see it</strong></td></tr>
   <tr><td>Your name</td><td>To address you by name in the app</td></tr>
-  <tr><td>Account identifier (uid)</td><td>To know which account the data on your phone belongs to</td></tr>
+  <tr><td>Account ID (uid)</td><td>To know which account your data belongs to</td></tr>
   <tr><td>Account creation and last sign-in time</td><td>Recorded automatically by Firebase</td></tr>
-  <tr><td>Connection data such as IP address</td><td>Recorded automatically by Firebase for security and abuse prevention</td></tr>
+  <tr><td>Connection information (such as IP address)</td><td>Recorded automatically by Firebase for security and abuse prevention</td></tr>
 </table>
 </div>
 
 <p>
   If you choose to sign in with Google, Google tells us <strong>only</strong>
-  your name and email address. We never see your Google password and we do not
-  access anything else in your Google account — not your contacts, files or
-  calendar.
+  your name and email address. We do not see your Google password and do not
+  access anything else in your Google account (contacts, files, calendar).
 </p>
 
-<h3>Stored on your phone only</h3>
+<h3>Your fitness data (Firebase Firestore)</h3>
 
 <p>
-  The following is kept in the app's private storage on your device.
-  <strong>None of it is sent over the internet</strong> and we have no access
-  to it:
+  The information you enter is stored both on your phone and in Google's
+  Firebase Firestore database, in an area that <strong>only your account can
+  access</strong>. This lets your records follow you when you sign in on
+  another phone and keeps them safe if you lose your phone. What is stored:
 </p>
 
 <ul>
-  <li>Gender, age, height, weight</li>
-  <li>Your activity level and goal type (lose, maintain, gain)</li>
-  <li>Your daily calorie, step and water goals</li>
-  <li>Meals you log (calories and an optional note)</li>
-  <li>Workouts you record (type, duration, intensity, calories)</li>
-  <li>Your daily water and step records</li>
+  <li><strong>Profile:</strong> your name, email address, age, height, weight,
+      sex, activity level and goal type (lose, maintain, gain)</li>
+  <li><strong>Goals:</strong> your daily calorie, step and water goals</li>
+  <li><strong>Meals:</strong> calories, protein, carbohydrate and fat, meal name
+      and your optional note</li>
+  <li><strong>Saved meals:</strong> meal templates you define yourself</li>
+  <li><strong>Workouts:</strong> type, duration, intensity and calories</li>
+  <li><strong>Daily logs:</strong> your step count and water intake</li>
+  <li><strong>Weight logs</strong> (with dates)</li>
+  <li><strong>Workout programs you save</strong> (programs prepared by AI Coach
+      that you chose to save)</li>
 </ul>
 
-<div class="box warn">
-  <p><strong>This has an important consequence:</strong> your fitness data is
-  not backed up. If you lose your phone, uninstall the app or move to a new
-  device, you can sign in with your account but <strong>your history will not
-  come back</strong>. We plan to change this in the future and will update this
-  page when we do.</p>
-</div>
+<p>
+  This data may count as <strong>health-related information</strong>. We use it
+  only to provide the app's features to you; we do not use it for advertising,
+  profiling or sale, and we do not share it with anyone else. Firestore
+  security rules allow each account to read and write only its own data.
+</p>
+
+<h3>Step counter</h3>
+
+<p>
+  To count your steps, the app uses your phone's <strong>step counter
+  sensor</strong>, and Android asks you for the <strong>"Physical activity"</strong>
+  permission. So that steps are counted while the app is closed, the sensor
+  is read in the background roughly every 15 minutes. Only your daily step
+  total is stored; your location, route or type of movement is not recorded.
+  If you do not grant the permission, the app keeps working; steps are simply
+  not counted.
+</p>
+
+<h3>AI Coach</h3>
+
+<p>
+  AI Coach is offered with a <strong>monthly subscription</strong> and using it is
+  optional. If you use it:
+</p>
+
+<ul>
+  <li><strong>"Ask AI Coach":</strong> The <strong>text of your question</strong>
+      and the app language are sent through our server (Google Cloud Functions)
+      to <strong>OpenAI</strong> to generate an answer. Your name, email address,
+      account ID and fitness data are <strong>not included</strong>. Your
+      questions and the answers are <strong>not stored</strong> on our server.
+      Your chat history is kept only on your phone, is excluded from phone
+      backups, and is deleted when you delete your account.
+      <br><em>If you write health information into your question yourself (for
+      example an illness, medication or injury), that information is sent to
+      OpenAI together with the question. We recommend not including anything
+      that identifies you, such as your name or ID number.</em></li>
+  <li><strong>Program builder:</strong> Currently runs on your phone using fixed
+      rules and sends nothing out. If it is later connected to an AI service,
+      your age, height, weight and sex will be sent <strong>without your name
+      or email address</strong> to tailor the program, you will be asked for
+      separate consent, and we will update this policy.</li>
+  <li><strong>Image analysis:</strong> Currently shows only a sample result. The
+      photo you pick from your gallery <strong>never leaves your phone</strong>,
+      is not uploaded to any server and is not stored. The app does not ask for
+      general access to your gallery; it only sees the single photo you pick.</li>
+</ul>
+
+<h3>Subscription and payment (Google Play)</h3>
+
+<p>
+  You buy the AI Coach subscription through <strong>Google Play</strong>. Your
+  card details and the payment are handled entirely by Google;
+  <strong>we do not see or store your payment information</strong>. To check
+  whether your subscription is valid:
+</p>
+
+<ul>
+  <li>The <strong>purchase token</strong> issued by Google Play is stored on our
+      server, linked to your account, and before each AI Coach question we ask
+      Google Play whether the subscription is still active. The app itself
+      cannot read this token.</li>
+  <li>To count your daily question allowance (10 questions a day), an
+      irreversible digest (hash) of the purchase token and that day's question
+      count are stored.</li>
+</ul>
 
 <h2>3. What we do not collect</h2>
 
-<p>The app never requests, reads or collects:</p>
+<p>The app does <strong>not request, read or collect</strong>:</p>
 <ul>
   <li>Your location</li>
-  <li>Your contacts, messages, photos or files</li>
+  <li>Your contacts, messages or files</li>
   <li>Other apps on your phone</li>
-  <li>Camera and microphone</li>
-  <li>Health sensors such as heart rate</li>
+  <li>Camera or microphone</li>
+  <li>Other health sensors such as heart rate (only the step counter is used)</li>
+  <li>Your card or bank details</li>
 </ul>
 
 <p>
-  The only permission the app requests is <strong>internet access</strong>,
-  and it is used solely for sign-up and sign-in.
+  Permissions the app requests: <strong>internet access</strong> (for sign-in,
+  syncing your data and AI Coach) and <strong>physical activity</strong> (for the
+  step counter).
 </p>
 
 <p>
-  The app contains <strong>no advertising</strong> and <strong>no analytics or
-  tracking tools</strong> (no Google Analytics, Firebase Analytics, Crashlytics
-  or similar). Your usage is not tracked.
+  The app has <strong>no ads</strong> and <strong>no analytics or tracking
+  tools</strong> (no Google Analytics, Firebase Analytics, Crashlytics or
+  similar). Your usage habits are not tracked.
 </p>
 
-<h2>4. Why we process this data</h2>
+<h2>4. Why we process data</h2>
 
 <ul>
-  <li><strong>Performance of a contract:</strong> the app does not work without
-      an account, so email and password are required.</li>
-  <li><strong>Legitimate interest:</strong> Firebase's connection logs exist to
-      prevent abuse of accounts.</li>
-  <li><strong>Consent:</strong> you enter your fitness details yourself and they
-      stay on your phone. You may also skip profile setup entirely.</li>
+  <li><strong>Performance of a contract:</strong> The app does not work without
+      an account, so email and password are required. Verifying your
+      subscription and counting your daily allowance are needed to provide the
+      service you paid for.</li>
+  <li><strong>Legitimate interest:</strong> The connection records kept by
+      Firebase are for preventing account abuse. Keeping the purchase-token
+      digest for 48 hours after account deletion prevents the same day's
+      question allowance from being reset by deleting and recreating an
+      account.</li>
+  <li><strong>Explicit consent:</strong> You enter your fitness and
+      health-related information (weight, meals, workouts, steps) yourself, and
+      syncing it to the cloud is based on this policy, which you accept when
+      creating an account. You may leave it out; the app lets you skip profile
+      setup. Using AI Coach and sending it questions is entirely your choice.</li>
 </ul>
 
-<h2>5. Who we share with</h2>
+<h2>5. Who it is shared with</h2>
 
 <p>
-  We do <strong>not sell</strong> your data and do <strong>not share</strong>
-  it for advertising. Your account data is held by a single provider:
+  We <strong>do not sell</strong> your data or <strong>share</strong> it for
+  advertising. We use only the service providers needed to run the app:
 </p>
+
+<div class="table-wrap">
+<table>
+  <tr><th>Provider</th><th>Purpose</th><th>Which data</th></tr>
+  <tr><td><strong>Google Firebase</strong> (Authentication, Firestore, Cloud Functions)</td>
+      <td>Account, storing and syncing your data, AI Coach server</td>
+      <td>Account information, your fitness data, subscription records</td></tr>
+  <tr><td><strong>Google Play</strong></td>
+      <td>Selling the subscription, payment and subscription verification</td>
+      <td>Purchase information (Google takes the payment)</td></tr>
+  <tr><td><strong>OpenAI</strong></td>
+      <td>Generating AI Coach answers</td>
+      <td>Only the question text you write and the language</td></tr>
+</table>
+</div>
+
+<p>
+  Google's privacy policy:
+  <a href="https://policies.google.com/privacy">policies.google.com/privacy</a> ·
+  OpenAI's privacy policy:
+  <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a>.
+  The app asks OpenAI not to store questions on its side; under its own
+  policy OpenAI may keep this data for a limited time to prevent abuse, and
+  states that it does not use data sent through its API to train its models
+  by default.
+</p>
+
+<p>
+  Apart from this, we do not share any information with anyone unless
+  required by law (for example a court order).
+</p>
+
+<h3>International transfers</h3>
+
+<p>
+  Google's and OpenAI's servers may be located outside Türkiye, including in
+  the United States. By creating an account and using AI Coach, you give
+  explicit consent to the data listed above being transferred abroad to
+  provide these services. If you do not use AI Coach, no data is sent to
+  OpenAI.
+</p>
+
+<h2>6. How long it is kept</h2>
 
 <ul>
-  <li><strong>Google Firebase Authentication</strong> — the authentication
-      service. Google processes this data on its own servers.
-      Google's privacy policy:
-      <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
-</ul>
-
-<p>
-  Apart from this, we share nothing with anyone unless legally required to do
-  so, for example by a court order.
-</p>
-
-<p>
-  Firebase servers may be located outside your country. By creating an account
-  you accept this transfer of your account data.
-</p>
-
-<h2>6. How long we keep it</h2>
-
-<ul>
-  <li><strong>Account data:</strong> until you delete your account, at which
-      point it is removed from Firebase.</li>
-  <li><strong>Fitness data on your phone:</strong> until you delete it or
-      uninstall the app. Uninstalling removes it from your phone completely.</li>
-  <li><strong>Firebase security logs:</strong> Google's own retention periods
+  <li><strong>Your account information and fitness data in the cloud:</strong>
+      Until you delete your account.</li>
+  <li><strong>Data on your phone and your AI Coach chat history:</strong> Until
+      you delete it, delete your account or uninstall the app.</li>
+  <li><strong>AI Coach questions:</strong> Not stored on our server. OpenAI's own
+      retention periods apply on its side.</li>
+  <li><strong>Subscription record:</strong> For as long as your account exists.
+      When you delete your account the subscription link is deleted
+      immediately; the purchase-token digest and that day's question count are
+      deleted automatically after 48 hours.</li>
+  <li><strong>Firebase security records:</strong> Google's own retention periods
       apply.</li>
 </ul>
 
 <h2>7. Deleting your account and data</h2>
 
+<p>There are two ways:</p>
+
 <ol>
-  <li><strong>In the app:</strong> Profile tab → <em>Delete my account</em>.
-      Once confirmed, your account is removed from Firebase and your data from
-      your phone immediately.</li>
-  <li><strong>By email:</strong> send a deletion request to fitness.tracker.2027@gmail.com from
-      the email address of your account. We complete requests within 30 days
-      at the latest.</li>
+  <li><strong>In the app:</strong> Profile tab → <em>Delete my account</em>. Once
+      you confirm, your account, your data in the cloud and your data on the
+      phone are deleted.</li>
+  <li><strong>By email:</strong> Send a deletion request to
+      fitness.tracker.2027@gmail.com from your account's email address. We will
+      complete your request within 30 days at the latest.</li>
 </ol>
 
-<p>See the <a href="delete-account.html">account deletion page</a> for details.</p>
+<p>
+  Deleting your account <strong>does not cancel your Google Play
+  subscription</strong>. You need to cancel it separately in Google Play →
+  Payments &amp; subscriptions. See the <a href="delete-account.html">account
+  deletion page</a> for details.
+</p>
 
 <h2>8. Security</h2>
 
 <ul>
-  <li>Your password is stored by Google in an irreversibly hashed form; the
-      plain password does not exist anywhere.</li>
-  <li>All traffic between the app and Firebase is encrypted (HTTPS).</li>
-  <li>Data on your phone lives in the app's private storage, which other apps
-      cannot read.</li>
+  <li>Your password is stored irreversibly hashed by Google; the plain password
+      is never kept anywhere.</li>
+  <li>All communication between the app, Firebase and OpenAI is encrypted
+      (HTTPS).</li>
+  <li>Your data in the cloud can be accessed only with your own account; one
+      user cannot read another user's data.</li>
+  <li>The OpenAI access key is kept only on the server; it is not inside the
+      app.</li>
+  <li>Data on your phone is kept in the private area Android reserves for the
+      app; other apps cannot read it.</li>
 </ul>
 
 <p>
-  No system is perfectly secure. We recommend choosing a strong password that
-  you do not use anywhere else.
+  Still, no system is completely secure. To protect your account, we
+  recommend a strong password that you do not use anywhere else.
 </p>
 
 <h2>9. Children</h2>
 
 <p>
-  The app is <strong>not intended for anyone under 13</strong>, and profile
-  setup does not accept an age below 13. If we learn that an account belongs to
-  a child under 13, we delete it.
+  The app is <strong>not designed for children under 13</strong>, and an age
+  under 13 cannot be entered during profile setup. The AI Coach program
+  feature is for <strong>ages 18 and over</strong>. If we learn that an account
+  belongs to a child under 13, we will delete it.
 </p>
 
 <h2>10. Your rights</h2>
 
 <p>
-  Depending on where you live, you may have the right to access your personal
-  data, to have it corrected or erased, to object to or restrict its
-  processing, and to receive a copy of it. Users in Türkiye have these rights
-  under Article 11 of Law No. 6698 (KVKK).
+  Under Article 11 of Turkish Personal Data Protection Law No. 6698 (KVKK),
+  you have the right to learn whether your personal data is processed, to
+  request information about it, to learn the purpose of processing and
+  whether it is used accordingly, to know the third parties it is transferred
+  to in Türkiye or abroad, to request correction of incomplete or inaccurate
+  data, to request its deletion or destruction, and to object to a result
+  against you arising solely from automated analysis. You can withdraw your
+  explicit consent at any time; the easiest way is to delete your account.
 </p>
 
 <p>
-  To exercise them, write to fitness.tracker.2027@gmail.com. We respond within 30 days at the
-  latest. Most of your data is already on your phone and under your direct
-  control, and you can delete your account yourself from inside the app.
+  To use these rights, simply write to fitness.tracker.2027@gmail.com. We will
+  respond within 30 days at the latest.
 </p>
 
 <h2>11. Changes to this policy</h2>
 
 <p>
-  This page may change as the app changes. For significant changes we update
-  the effective date and notify you inside the app. A change such as moving
-  data to the cloud would be stated explicitly.
+  This policy may change as the app changes. If there is a significant change,
+  we will update the effective date and notify you in the app. In particular,
+  if a new type of data starts being sent to AI Coach, we will say so clearly.
 </p>
 
 <h2>12. Contact</h2>
 
-<p>Questions: <strong>fitness.tracker.2027@gmail.com</strong></p>
+<p>
+  For questions: <strong>fitness.tracker.2027@gmail.com</strong>
+</p>
 
 <nav class="nav">
   <a href="index.html">Home</a>
@@ -230,7 +359,7 @@
 </nav>
 
 <footer class="doc">
-  FitnessTracker — Privacy Policy, 15 September 2026
+  FitnessTracker — Privacy Policy, 28 September 2026
 </footer>
 
 </main>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gizlilik Politikası — FitnessTracker</title>
-<meta name="description" content="FitnessTracker uygulamasının hangi verileri topladığı, nerede sakladığı ve nasıl sildiği.">
+<meta name="description" content="FitnessTracker uygulamasının hangi verileri topladığı, nerede sakladığı, kimlerle paylaştığı ve nasıl sildiği.">
 <link rel="stylesheet" href="ortak.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Gizlilik Politikası</h1>
-  <p class="updated">Yürürlük tarihi: 15 Eylül 2026</p>
+  <p class="updated">Yürürlük tarihi: 28 Eylül 2026</p>
 </header>
 
 <p>
@@ -23,12 +23,14 @@
 </p>
 
 <div class="box">
-  <p><strong>Özet:</strong> Uygulamayı kullanmak için bir hesap açmanız gerekiyor
-  ve yalnızca <strong>hesabınıza ait bilgiler</strong> (e-posta adresiniz ve
-  hesap kimliğiniz) Google'ın sunucularında tutuluyor. <strong>Fitness
-  verileriniz</strong> — kilonuz, öğünleriniz, egzersizleriniz, su takibiniz —
-  yalnızca <strong>telefonunuzda</strong> duruyor; bize ya da başka birine
-  gönderilmiyor. Reklam yok, analiz aracı yok, veri satışı yok.</p>
+  <p><strong>Özet:</strong> Uygulamayı kullanmak için bir hesap açmanız gerekir.
+  Hesabınız ve girdiğiniz fitness verileri (profiliniz, öğünleriniz,
+  egzersizleriniz, su, adım ve kilo kayıtlarınız) <strong>Google Firebase
+  sunucularında hesabınıza bağlı olarak</strong> saklanır; böylece telefon
+  değiştirdiğinizde kayıtlarınız kaybolmaz. <strong>AI Koç'a sorduğunuz
+  sorular</strong> cevaplanmak üzere OpenAI'ye gönderilir, ama adınız, e-postanız
+  ve fitness verileriniz gönderilmez; sorular ve cevaplar sunucularımızda
+  saklanmaz. Reklam yok, analiz aracı yok, veri satışı yok.</p>
 </div>
 
 <h2>1. Veri sorumlusu</h2>
@@ -37,26 +39,27 @@
   Uygulamanın geliştiricisi ve bu metin kapsamında veri sorumlusu:
 </p>
 <ul>
+  <li><strong>Geliştirici:</strong> Efe Kesler</li>
   <li><strong>Uygulama:</strong> FitnessTracker (<code>efekesler.fitness</code>)</li>
   <li><strong>İletişim:</strong> fitness.tracker.2027@gmail.com</li>
 </ul>
 
 <h2>2. Hangi verileri işliyoruz</h2>
 
-<h3>Google'ın sunucularında tutulanlar (Firebase Authentication)</h3>
+<h3>Hesap bilgileri (Firebase Authentication)</h3>
 
 <p>
   Hesabınızı oluşturmak ve girişinizi doğrulamak için Google'ın Firebase
-  Authentication hizmetini kullanıyoruz. Orada şunlar tutuluyor:
+  Authentication hizmetini kullanıyoruz. Orada şunlar tutulur:
 </p>
 
 <div class="table-wrap">
 <table>
   <tr><th>Veri</th><th>Neden</th></tr>
-  <tr><td>E-posta adresiniz</td><td>Hesabınızı tanımlamak, giriş yapmanızı sağlamak, şifre sıfırlama e-postası gönderebilmek</td></tr>
+  <tr><td>E-posta adresiniz</td><td>Hesabınızı tanımlamak, giriş yapmanızı sağlamak, doğrulama ve şifre sıfırlama e-postası gönderebilmek</td></tr>
   <tr><td>Şifreniz (geri döndürülemez biçimde şifrelenmiş)</td><td>Girişinizi doğrulamak. Düz hâli hiçbir yerde tutulmaz; <strong>geliştirici dahil kimse göremez</strong></td></tr>
   <tr><td>Adınız</td><td>Uygulamada size ismen hitap etmek</td></tr>
-  <tr><td>Hesap kimliği (uid)</td><td>Telefonunuzdaki verilerin hangi hesaba ait olduğunu bilmek</td></tr>
+  <tr><td>Hesap kimliği (uid)</td><td>Verilerinizin hangi hesaba ait olduğunu bilmek</td></tr>
   <tr><td>Hesap oluşturma ve son giriş tarihi</td><td>Firebase tarafından otomatik tutulur</td></tr>
   <tr><td>Bağlantı bilgileri (IP adresi gibi)</td><td>Firebase tarafından güvenlik ve kötüye kullanım önleme amacıyla otomatik kaydedilir</td></tr>
 </table>
@@ -69,45 +72,117 @@
   dosyalarınız, takviminiz) erişmiyoruz.
 </p>
 
-<h3>Yalnızca telefonunuzda tutulanlar</h3>
+<h3>Fitness verileriniz (Firebase Firestore)</h3>
 
 <p>
-  Aşağıdaki bilgiler telefonunuzun kendi deposunda, uygulamanın özel alanında
-  saklanır. <strong>Hiçbiri internete gönderilmez</strong>, bizim onlara
-  erişimimiz yoktur:
+  Girdiğiniz bilgiler hem telefonunuzda hem de Google'ın Firebase Firestore
+  veritabanında, <strong>yalnızca sizin hesabınızın erişebildiği</strong> bir
+  alanda saklanır. Bunun amacı, aynı hesapla başka bir telefondan girdiğinizde
+  kayıtlarınızın gelmesi ve telefonunuzu kaybettiğinizde verilerinizin
+  kaybolmamasıdır. Saklanan bilgiler:
 </p>
 
 <ul>
-  <li>Cinsiyet, yaş, boy, kilo</li>
-  <li>Hareket düzeyiniz ve hedef türünüz (kilo verme, koruma, alma)</li>
-  <li>Günlük kalori, adım ve su hedefleriniz</li>
-  <li>Girdiğiniz öğünler (kalori miktarı ve isteğe bağlı notunuz)</li>
-  <li>Kaydettiğiniz egzersizler (tür, süre, yoğunluk, kalori)</li>
-  <li>Günlük su ve adım kayıtlarınız</li>
+  <li><strong>Profil:</strong> adınız, e-posta adresiniz, yaşınız, boyunuz,
+      kilonuz, cinsiyetiniz, hareket düzeyiniz ve hedef türünüz (kilo verme,
+      koruma, alma)</li>
+  <li><strong>Hedefler:</strong> günlük kalori, adım ve su hedefleriniz</li>
+  <li><strong>Öğünler:</strong> kalori, protein, karbonhidrat ve yağ miktarı,
+      öğün adı ve isteğe bağlı notunuz</li>
+  <li><strong>Kayıtlı öğünleriniz:</strong> kendi tanımladığınız öğün şablonları</li>
+  <li><strong>Egzersizler:</strong> tür, süre, yoğunluk ve kalori</li>
+  <li><strong>Günlük kayıtlar:</strong> adım sayınız ve içtiğiniz su miktarı</li>
+  <li><strong>Kilo kayıtlarınız</strong> (tarihiyle birlikte)</li>
+  <li><strong>Kaydettiğiniz antrenman programları</strong> (AI Koç'un
+      hazırladığı ve sizin kaydettiğiniz programlar)</li>
 </ul>
 
-<div class="box warn">
-  <p><strong>Bunun önemli bir sonucu var:</strong> fitness verileriniz
-  yedeklenmiyor. Telefonunuzu kaybeder, uygulamayı silerseniz ya da yeni bir
-  telefona geçerseniz, hesabınızla giriş yapabilirsiniz ama
-  <strong>geçmiş kayıtlarınız gelmez</strong>. Bunu ileride değiştirmeyi
-  planlıyoruz; değiştirdiğimizde bu metni güncelleyeceğiz.</p>
-</div>
+<p>
+  Bu veriler <strong>sağlığınızla ilgili bilgi</strong> sayılabilir. Onları
+  yalnızca uygulamanın size hizmet vermesi için kullanıyoruz; reklam, profil
+  çıkarma veya satış amacıyla kullanmıyoruz ve başkasıyla paylaşmıyoruz.
+  Firestore güvenlik kuralları, bir hesabın yalnızca kendi verilerini
+  okuyup yazabilmesine izin verir.
+</p>
+
+<h3>Adım sayacı</h3>
+
+<p>
+  Adımlarınızı saymak için uygulama, telefonunuzun <strong>adım sayar
+  sensörünü</strong> kullanır ve Android sizden <strong>"Fiziksel aktivite"</strong>
+  izni ister. Uygulama kapalıyken de adımların sayılabilmesi için bu okuma
+  arka planda yaklaşık 15 dakikada bir yapılır. Yalnızca günlük toplam adım
+  sayınız saklanır; konumunuz, rotanız veya hareket şekliniz kaydedilmez.
+  İzni vermezseniz uygulama çalışmaya devam eder, yalnızca adım sayılmaz.
+</p>
+
+<h3>AI Koç</h3>
+
+<p>
+  AI Koç, <strong>aylık abonelikle</strong> sunulan bir özelliktir ve
+  kullanımı isteğe bağlıdır. Kullanırsanız:
+</p>
+
+<ul>
+  <li><strong>"AI Koç'a Sor":</strong> Yazdığınız <strong>soru metni</strong> ve
+      uygulamanın dili, sunucumuz (Google Cloud Functions) üzerinden cevap
+      üretmesi için <strong>OpenAI</strong>'ye gönderilir. Adınız, e-postanız,
+      hesap kimliğiniz ve fitness verileriniz bu isteğe
+      <strong>eklenmez</strong>. Sorularınız ve cevaplar sunucumuzda
+      <strong>kaydedilmez</strong>. Sohbet geçmişiniz yalnızca telefonunuzda
+      tutulur, telefon yedeklemesine dahil edilmez ve hesabınızı sildiğinizde
+      silinir.
+      <br><em>Sorunuza kendiniz sağlık bilgisi yazarsanız (ör. bir hastalık,
+      ilaç veya sakatlık), bu bilgi de soruyla birlikte OpenAI'ye gider.
+      Bu yüzden sorularınıza adınız, kimlik numaranız gibi sizi tanıtan
+      bilgiler yazmamanızı öneririz.</em></li>
+  <li><strong>Program hazırlama:</strong> Şu anda telefonunuzda, sabit
+      kurallarla çalışır ve hiçbir bilgi dışarı gönderilmez. İleride bir
+      yapay zekâ servisine bağlanırsa, programı size göre hazırlamak için
+      yaşınız, boyunuz, kilonuz ve cinsiyetiniz <strong>adınız ve e-postanız
+      olmadan</strong> gönderilecek ve bunun için sizden ayrıca onay
+      istenecek; o zaman bu metni de güncelleyeceğiz.</li>
+  <li><strong>Görsel analiz:</strong> Şu anda yalnızca örnek bir sonuç
+      gösterir. Galeriden seçtiğiniz fotoğraf <strong>telefonunuzdan çıkmaz</strong>,
+      hiçbir sunucuya yüklenmez ve saklanmaz. Uygulama galerinize genel erişim
+      izni istemez; yalnızca sizin seçtiğiniz tek fotoğrafı görür.</li>
+</ul>
+
+<h3>Abonelik ve ödeme (Google Play)</h3>
+
+<p>
+  AI Koç aboneliğini <strong>Google Play</strong> üzerinden satın alırsınız.
+  Kart bilgileriniz ve ödeme işlemi tamamen Google tarafından yönetilir;
+  <strong>ödeme bilgilerinizi görmüyor ve saklamıyoruz</strong>. Aboneliğinizin
+  geçerli olup olmadığını kontrol etmek için:
+</p>
+
+<ul>
+  <li>Google Play'in verdiği <strong>satın alma jetonu</strong>, hesabınıza
+      bağlı olarak sunucumuzda saklanır ve her AI Koç sorusundan önce
+      aboneliğin hâlâ aktif olduğu Google Play'e sorulur. Bu jeton
+      uygulamanın kendisi tarafından da okunamaz.</li>
+  <li>Günlük soru hakkınızın (günde 10 soru) hesaplanması için, satın alma
+      jetonunun geri döndürülemez bir özeti (karması) ile o günkü soru sayınız
+      saklanır.</li>
+</ul>
 
 <h2>3. Toplamadıklarımız</h2>
 
 <p>Uygulama şunları <strong>istemez, okumaz ve toplamaz</strong>:</p>
 <ul>
   <li>Konumunuz</li>
-  <li>Kişileriniz, mesajlarınız, fotoğraflarınız veya dosyalarınız</li>
+  <li>Kişileriniz, mesajlarınız veya dosyalarınız</li>
   <li>Telefonunuzdaki diğer uygulamalar</li>
   <li>Kamera ve mikrofon</li>
-  <li>Sağlık sensörleri (nabız gibi)</li>
+  <li>Nabız gibi diğer sağlık sensörleri (yalnızca adım sayar kullanılır)</li>
+  <li>Kart veya banka bilgileriniz</li>
 </ul>
 
 <p>
-  Uygulamanın istediği tek izin <strong>internet erişimi</strong>dir; o da
-  yalnızca giriş ve kayıt işlemleri için kullanılır.
+  Uygulamanın istediği izinler: <strong>internet erişimi</strong> (giriş,
+  verilerin eşitlenmesi ve AI Koç için) ve <strong>fiziksel aktivite</strong>
+  (adım sayacı için).
 </p>
 
 <p>
@@ -119,48 +194,80 @@
 <h2>4. Verileri neden işliyoruz</h2>
 
 <ul>
-  <li><strong>Sözleşmenin ifası:</strong> Hesap açmadan uygulama
-      çalışmadığı için e-posta ve şifre bilgisi zorunludur.</li>
+  <li><strong>Sözleşmenin ifası:</strong> Hesap açmadan uygulama çalışmadığı
+      için e-posta ve şifre bilgisi zorunludur. Aboneliğin doğrulanması ve
+      günlük hakkın sayılması da satın aldığınız hizmeti sunmak içindir.</li>
   <li><strong>Meşru menfaat:</strong> Firebase'in tuttuğu bağlantı kayıtları,
-      hesapların kötüye kullanımını önlemek içindir.</li>
-  <li><strong>Açık rıza:</strong> Fitness bilgilerinizi (kilo, öğün, egzersiz)
-      siz girersiniz ve telefonunuzda kalır. Girmeyebilirsiniz de; uygulama
-      profil kurulumunu atlamanıza izin verir.</li>
+      hesapların kötüye kullanımını önlemek içindir. Satın alma jetonunun
+      özetinin hesap silindikten sonra 48 saat tutulması, aynı günün soru
+      hakkının hesap silip yeniden açarak sıfırlanmasını önlemek içindir.</li>
+  <li><strong>Açık rıza:</strong> Fitness ve sağlıkla ilgili bilgilerinizi
+      (kilo, öğün, egzersiz, adım) siz girersiniz ve bunların buluta
+      eşitlenmesi hesap açarken onayladığınız bu metne dayanır. Girmeyebilirsiniz
+      de; uygulama profil kurulumunu atlamanıza izin verir. AI Koç'u kullanmak
+      ve ona soru göndermek de tamamen sizin tercihinizdir.</li>
 </ul>
 
 <h2>5. Kimlerle paylaşılıyor</h2>
 
 <p>
   Verilerinizi <strong>satmıyoruz</strong>, reklam amacıyla
-  <strong>paylaşmıyoruz</strong>. Hesap bilgileriniz yalnızca tek bir hizmet
-  sağlayıcıda tutulur:
+  <strong>paylaşmıyoruz</strong>. Yalnızca uygulamanın çalışması için gereken
+  şu hizmet sağlayıcıları kullanıyoruz:
 </p>
 
-<ul>
-  <li><strong>Google Firebase Authentication</strong> — kimlik doğrulama
-      altyapısı. Google, bu bilgileri kendi sunucularında işler.
-      Google'ın gizlilik politikası:
-      <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
-</ul>
+<div class="table-wrap">
+<table>
+  <tr><th>Hizmet sağlayıcı</th><th>Ne için</th><th>Hangi veri</th></tr>
+  <tr><td><strong>Google Firebase</strong> (Authentication, Firestore, Cloud Functions)</td>
+      <td>Hesap, verilerin saklanması ve eşitlenmesi, AI Koç sunucusu</td>
+      <td>Hesap bilgileri, fitness verileriniz, abonelik kayıtları</td></tr>
+  <tr><td><strong>Google Play</strong></td>
+      <td>Abonelik satışı, ödeme ve abonelik doğrulama</td>
+      <td>Satın alma bilgileri (ödemeyi Google alır)</td></tr>
+  <tr><td><strong>OpenAI</strong></td>
+      <td>AI Koç'un cevaplarını üretmek</td>
+      <td>Yalnızca yazdığınız soru metni ve dil</td></tr>
+</table>
+</div>
+
+<p>
+  Google'ın gizlilik politikası:
+  <a href="https://policies.google.com/privacy">policies.google.com/privacy</a> ·
+  OpenAI'nin gizlilik politikası:
+  <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a>.
+  Uygulama, OpenAI'den soruları kendi tarafında saklamamasını ister; OpenAI
+  kendi politikası gereği kötüye kullanımı önlemek için bu verileri sınırlı
+  bir süre tutabilir ve API üzerinden gelen verileri varsayılan olarak
+  modellerini eğitmek için kullanmadığını belirtmektedir.
+</p>
 
 <p>
   Bunun dışında, yasal bir zorunluluk olmadıkça (mahkeme kararı gibi) hiçbir
   bilgiyi kimseyle paylaşmıyoruz.
 </p>
 
+<h3>Yurt dışına aktarım</h3>
+
 <p>
-  Firebase sunucuları yurt dışında bulunabilir. Hesap açarak, hesap
-  bilgilerinizin bu şekilde yurt dışına aktarılmasını kabul etmiş olursunuz.
+  Google ve OpenAI'nin sunucuları Türkiye dışında, ABD dahil başka ülkelerde
+  bulunabilir. Hesap açarak ve AI Koç'u kullanarak, yukarıda sayılan verilerin
+  bu hizmetleri sağlamak amacıyla yurt dışına aktarılmasına açık rıza vermiş
+  olursunuz. AI Koç'u kullanmazsanız OpenAI'ye hiçbir veri gönderilmez.
 </p>
 
 <h2>6. Ne kadar süre saklanıyor</h2>
 
 <ul>
-  <li><strong>Hesap bilgileriniz:</strong> Hesabınızı silene kadar. Sildiğinizde
-      Firebase'den de silinir.</li>
-  <li><strong>Telefonunuzdaki fitness verileriniz:</strong> Siz silene ya da
-      uygulamayı kaldırana kadar. Uygulamayı kaldırdığınızda bu veriler
-      telefonunuzdan tamamen gider.</li>
+  <li><strong>Hesap bilgileriniz ve buluttaki fitness verileriniz:</strong>
+      Hesabınızı silene kadar.</li>
+  <li><strong>Telefonunuzdaki veriler ve AI Koç sohbet geçmişi:</strong>
+      Siz silene, hesabınızı silene ya da uygulamayı kaldırana kadar.</li>
+  <li><strong>AI Koç soruları:</strong> Sunucumuzda saklanmaz. OpenAI tarafında
+      OpenAI'nin kendi saklama süreleri geçerlidir.</li>
+  <li><strong>Abonelik kaydı:</strong> Hesabınız durdukça. Hesabınızı
+      sildiğinizde abonelik bağlantısı hemen silinir; satın alma jetonunun
+      özeti ve o günkü soru sayısı 48 saat sonra otomatik silinir.</li>
   <li><strong>Firebase'in güvenlik kayıtları:</strong> Google'ın kendi saklama
       süreleri geçerlidir.</li>
 </ul>
@@ -171,15 +278,18 @@
 
 <ol>
   <li><strong>Uygulama içinden:</strong> Profil sekmesi → <em>Hesabımı sil</em>.
-      Onayladığınızda hesabınız Firebase'den, verileriniz telefonunuzdan
-      hemen silinir.</li>
+      Onayladığınızda hesabınız, buluttaki verileriniz ve telefonunuzdaki
+      verileriniz silinir.</li>
   <li><strong>E-posta ile:</strong> fitness.tracker.2027@gmail.com adresine, hesabınızın e-posta
       adresinden silme talebi gönderin. Talebinizi en geç 30 gün içinde
       sonuçlandırırız.</li>
 </ol>
 
 <p>
-  Ayrıntılar için <a href="hesap-silme.html">hesap silme sayfasına</a> bakın.
+  Hesabınızı silmek <strong>Google Play aboneliğinizi iptal etmez</strong>.
+  Aboneliği Google Play → Ödemeler ve abonelikler bölümünden ayrıca iptal
+  etmeniz gerekir. Ayrıntılar için <a href="hesap-silme.html">hesap silme
+  sayfasına</a> bakın.
 </p>
 
 <h2>8. Güvenlik</h2>
@@ -187,7 +297,11 @@
 <ul>
   <li>Şifreniz Google tarafından geri döndürülemez biçimde şifrelenerek
       saklanır; düz hâli hiçbir yerde bulunmaz.</li>
-  <li>Uygulama ile Firebase arasındaki tüm iletişim şifrelidir (HTTPS).</li>
+  <li>Uygulama ile Firebase ve OpenAI arasındaki tüm iletişim şifrelidir (HTTPS).</li>
+  <li>Buluttaki verilerinize yalnızca kendi hesabınızla erişilebilir; bir
+      kullanıcı başka bir kullanıcının verisini okuyamaz.</li>
+  <li>OpenAI'ye erişim anahtarı yalnızca sunucuda tutulur; uygulamanın içinde
+      bulunmaz.</li>
   <li>Telefonunuzdaki veriler, Android'in uygulamalara ayırdığı özel alanda
       tutulur; başka uygulamalar bu alanı okuyamaz.</li>
 </ul>
@@ -201,7 +315,8 @@
 
 <p>
   Uygulama <strong>13 yaşın altındakiler için tasarlanmamıştır</strong> ve
-  profil kurulumunda 13'ten küçük bir yaş girilemez. 13 yaşın altında bir
+  profil kurulumunda 13'ten küçük bir yaş girilemez. AI Koç'un program
+  özelliği <strong>18 yaş ve üstü</strong> içindir. 13 yaşın altında bir
   kullanıcıya ait hesap açıldığını fark edersek sileriz.
 </p>
 
@@ -214,14 +329,14 @@
   dışında aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmişse
   düzeltilmesini isteme, silinmesini veya yok edilmesini isteme ve işlemenin
   münhasıran otomatik sistemlerle analiz edilmesi suretiyle aleyhinize bir
-  sonuç doğmasına itiraz etme haklarına sahipsiniz.
+  sonuç doğmasına itiraz etme haklarına sahipsiniz. Verdiğiniz açık rızayı
+  istediğiniz zaman geri alabilirsiniz; bunun en kolay yolu hesabınızı
+  silmektir.
 </p>
 
 <p>
-  Bu hakları kullanmak için fitness.tracker.2027@gmail.com adresine yazmanız yeterli. Talebinizi
-  en geç 30 gün içinde yanıtlarız. Verilerinizin çoğu zaten telefonunuzda ve
-  doğrudan sizin kontrolünüzde; hesabınızı da uygulama içinden kendiniz
-  silebilirsiniz.
+  Bu hakları kullanmak için fitness.tracker.2027@gmail.com adresine yazmanız
+  yeterli. Talebinizi en geç 30 gün içinde yanıtlarız.
 </p>
 
 <h2>11. Bu metinde değişiklik</h2>
@@ -229,7 +344,7 @@
 <p>
   Uygulama değiştikçe bu metin de değişebilir. Önemli bir değişiklik olursa
   yürürlük tarihini güncelleriz ve uygulama içinde bildiririz. Özellikle
-  verilerin buluta taşınması gibi bir değişiklik olursa bunu açıkça yazarız.
+  AI Koç'a yeni bir veri türü gönderilmeye başlanırsa bunu açıkça yazarız.
 </p>
 
 <h2>12. İletişim</h2>
@@ -246,7 +361,7 @@
 </nav>
 
 <footer class="doc">
-  FitnessTracker — Gizlilik Politikası, 15 Eylül 2026
+  FitnessTracker — Gizlilik Politikası, 28 Eylül 2026
 </footer>
 
 </main>

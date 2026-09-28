@@ -13,7 +13,7 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Hesap ve Veri Silme</h1>
-  <p class="updated">Güncelleme: 15 Eylül 2026</p>
+  <p class="updated">Güncelleme: 28 Eylül 2026</p>
 </header>
 
 <p>
@@ -31,14 +31,25 @@
 </ol>
 
 <p>
-  Onayladığınız anda hesabınız ve verileriniz silinir. Bu işlem
-  <strong>geri alınamaz</strong>.
+  Onayladığınız anda hesabınız, buluttaki verileriniz ve bu telefondaki
+  verileriniz silinir. Bu işlem <strong>geri alınamaz</strong>.
 </p>
+
+<div class="box warn">
+  <p>
+    <strong>AI Koç aboneliğiniz varsa:</strong> Hesabınızı silmek Google Play
+    aboneliğinizi <strong>iptal etmez</strong> ve ücret alınmaya devam eder.
+    Aboneliği <em>Google Play → Ödemeler ve abonelikler → Abonelikler</em>
+    bölümünden ayrıca iptal edin.
+  </p>
+</div>
 
 <div class="box">
   <p>
-    Uzun süredir giriş yapmadıysanız uygulama, silmeden önce sizden bir kez
-    daha giriş yapmanızı isteyebilir. Bu bir güvenlik önlemidir: telefonunuz
+    Son birkaç dakika içinde giriş yapmadıysanız uygulama, silmeden önce
+    sizden bir kez daha giriş yapmanızı ister. İnternet bağlantınız yoksa
+    silme yapılmaz; buluttaki veriler silinemeden hesabın silinmemesi için
+    işlem hiç başlamaz, bağlantı gelince tekrar deneyebilirsiniz. Bu bir güvenlik önlemidir: telefonunuz
     başkasının eline geçtiğinde hesabınızın silinememesi için.
   </p>
 </div>
@@ -67,18 +78,43 @@
   <tr><th>Veri</th><th>Nerede</th><th>Ne oluyor</th></tr>
   <tr>
     <td>E-posta adresiniz, adınız, şifreniz, hesap kimliğiniz</td>
+    <td>Firebase Authentication (Google sunucuları)</td>
+    <td><strong>Siliniyor</strong></td>
+  </tr>
+  <tr>
+    <td>Profiliniz (yaş, boy, kilo, cinsiyet, hedefleriniz), öğünleriniz,
+        kayıtlı öğünleriniz, egzersizleriniz, su, adım ve kilo kayıtlarınız,
+        kaydettiğiniz programlar</td>
+    <td>Firebase Firestore (Google sunucuları) ve telefonunuz</td>
+    <td><strong>Siliniyor</strong></td>
+  </tr>
+  <tr>
+    <td>AI Koç sohbet geçmişiniz ve AI Koç onay tercihleriniz</td>
+    <td>Yalnızca telefonunuz</td>
+    <td><strong>Siliniyor</strong></td>
+  </tr>
+  <tr>
+    <td>AI Koç abonelik bağlantınız ve kalan soru hakkı göstergeniz</td>
     <td>Firebase (Google sunucuları)</td>
     <td><strong>Siliniyor</strong></td>
   </tr>
   <tr>
-    <td>Profiliniz: yaş, boy, kilo, cinsiyet, hedefleriniz</td>
-    <td>Telefonunuz</td>
-    <td><strong>Siliniyor</strong></td>
+    <td>Satın alma jetonunun geri döndürülemez özeti ve o günkü soru sayısı
+        (adınız veya e-postanız yok)</td>
+    <td>Firebase (Google sunucuları)</td>
+    <td><strong>48 saat sonra otomatik siliniyor.</strong> Aynı günün soru
+        hakkının hesap silinip yeniden açılarak sıfırlanmasını önlemek için</td>
   </tr>
   <tr>
-    <td>Öğün, su ve egzersiz kayıtlarınız</td>
-    <td>Telefonunuz</td>
-    <td><strong>Siliniyor</strong></td>
+    <td>AI Koç'a daha önce gönderdiğiniz sorular</td>
+    <td>OpenAI</td>
+    <td>Bizim sunucumuzda hiç saklanmadı. OpenAI tarafında OpenAI'nin kendi
+        saklama süreleri geçerlidir</td>
+  </tr>
+  <tr>
+    <td>Google Play satın alma ve ödeme geçmişiniz</td>
+    <td>Google Play</td>
+    <td>Google hesabınızda kalır; Google'ın kurallarına tabidir</td>
   </tr>
   <tr>
     <td>Firebase'in tuttuğu bağlantı ve güvenlik kayıtları</td>
@@ -89,20 +125,30 @@
 </div>
 
 <p>
-  Silme işleminden sonra sizin adınıza sakladığımız <strong>hiçbir kişisel
-  veri kalmaz</strong>. Aynı e-posta adresiyle yeniden kayıt olabilirsiniz;
-  ama eski kayıtlarınız geri gelmez.
+  Silme işleminden sonra, yukarıda 48 saat tutulduğu yazan özet dışında,
+  sizin adınıza sakladığımız <strong>hiçbir kişisel veri kalmaz</strong>. Aynı
+  e-posta adresiyle yeniden kayıt olabilirsiniz; ama eski kayıtlarınız geri
+  gelmez. Aboneliğiniz hâlâ geçerliyse yeni hesabınızda <em>Satın alımları
+  geri yükle</em> ile tekrar bağlayabilirsiniz.
 </p>
 
 <h2>Yalnızca verilerimi silmek istiyorum, hesabım kalsın</h2>
 
 <p>
-  Uygulama içinden tek tek silebilirsiniz: öğün ve egzersiz kayıtlarının
-  yanındaki silme seçeneğini kullanın. Hepsini birden silmek isterseniz
-  telefonunuzun <em>Ayarlar → Uygulamalar → FitnessTracker → Depolama →
-  Verileri temizle</em> yolunu kullanabilirsiniz; bu, hesabınıza dokunmadan
-  telefondaki bütün uygulama verisini siler.
+  Öğün, egzersiz ve kayıtlı öğünlerinizi uygulama içinden tek tek
+  silebilirsiniz; sildiğiniz kayıt diğer telefonlarınızdan da kalkar.
+  Verilerinizin tamamının silinmesini ama hesabınızın kalmasını istiyorsanız
+  fitness.tracker.2027@gmail.com adresine hesabınızın e-posta adresinden
+  yazın; talebinizi en geç 30 gün içinde sonuçlandırırız.
 </p>
+
+<div class="box">
+  <p>
+    Telefonunuzdaki <em>Ayarlar → Uygulamalar → FitnessTracker → Depolama →
+    Verileri temizle</em> yolu yalnızca <strong>bu telefondaki</strong> kopyayı
+    siler. Verileriniz bulutta kaldığı için tekrar giriş yaptığınızda geri gelir.
+  </p>
+</div>
 
 <nav class="nav">
   <a href="index.html">Ana sayfa</a>
@@ -112,7 +158,7 @@
 </nav>
 
 <footer class="doc">
-  FitnessTracker — Hesap Silme, 15 Eylül 2026
+  FitnessTracker — Hesap Silme, 28 Eylül 2026
 </footer>
 
 </main>
