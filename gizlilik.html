@@ -28,9 +28,11 @@
   egzersizleriniz, su, adım ve kilo kayıtlarınız) <strong>Google Firebase
   sunucularında hesabınıza bağlı olarak</strong> saklanır; böylece telefon
   değiştirdiğinizde kayıtlarınız kaybolmaz. <strong>AI Koç'a sorduğunuz
-  sorular</strong> cevaplanmak üzere OpenAI'ye gönderilir, ama adınız, e-postanız
-  ve fitness verileriniz gönderilmez; sorular ve cevaplar sunucularımızda
-  saklanmaz. Reklam yok, analiz aracı yok, veri satışı yok.</p>
+  sorular</strong> ve o günkü sohbetiniz, cevaplanmak üzere OpenAI'ye gönderilir;
+  <strong>onay verirseniz</strong> cevapların size göre olması için profil
+  bilgileriniz (yaş, boy, kilo, cinsiyet, hareket düzeyi, hedef, günlük
+  hedefler) de eklenir. Adınız, e-postanız ve öğün/egzersiz kayıtlarınız
+  gönderilmez; sorular ve cevaplar sunucularımızda saklanmaz. Reklam yok, analiz aracı yok, veri satışı yok.</p>
 </div>
 
 <h2>1. Veri sorumlusu</h2>
@@ -124,14 +126,23 @@
 </p>
 
 <ul>
-  <li><strong>"AI Koç'a Sor":</strong> Yazdığınız <strong>soru metni</strong> ve
-      uygulamanın dili, sunucumuz (Google Cloud Functions) üzerinden cevap
-      üretmesi için <strong>OpenAI</strong>'ye gönderilir. Adınız, e-postanız,
-      hesap kimliğiniz ve fitness verileriniz bu isteğe
-      <strong>eklenmez</strong>. Sorularınız ve cevaplar sunucumuzda
-      <strong>kaydedilmez</strong>. Sohbet geçmişiniz yalnızca telefonunuzda
-      tutulur, telefon yedeklemesine dahil edilmez ve hesabınızı sildiğinizde
-      silinir.
+  <li><strong>"AI Koç'a Sor":</strong> Yazdığınız <strong>soru metni</strong>,
+      uygulamanın dili ve konuşmanın akışını anlayabilmesi için
+      <strong>o günkü önceki soru-cevaplarınız</strong>, sunucumuz (Google Cloud
+      Functions) üzerinden cevap üretmesi için <strong>OpenAI</strong>'ye
+      gönderilir. Önceki günlerin sohbeti gönderilmez.
+      <br><strong>Profil bilgileri (yalnızca onayınızla):</strong> İlk sorunuzda
+      size sorulur. Kabul ederseniz, cevapların size göre olması için
+      profilinizdeki yaşınız, boyunuz, kilonuz, cinsiyetiniz, hareket
+      düzeyiniz, hedefiniz ve günlük kalori/adım/su hedefleriniz de soruyla
+      birlikte gönderilir. Kabul etmezseniz cevaplar genel olur ve o gün
+      yeniden sorulmaz. 18 yaşından küçük kullanıcıların profil bilgileri hiç
+      gönderilmez.
+      <br>Adınız, e-postanız, hesap kimliğiniz ve öğün, egzersiz, su, adım ve
+      kilo kayıtlarınız bu isteğe <strong>eklenmez</strong>. Sorularınız, profil
+      bilgileriniz ve cevaplar sunucumuzda <strong>kaydedilmez</strong>. Sohbet
+      geçmişiniz yalnızca telefonunuzda tutulur, telefon yedeklemesine dahil
+      edilmez ve hesabınızı sildiğinizde silinir.
       <br><em>Sorunuza kendiniz sağlık bilgisi yazarsanız (ör. bir hastalık,
       ilaç veya sakatlık), bu bilgi de soruyla birlikte OpenAI'ye gider.
       Bu yüzden sorularınıza adınız, kimlik numaranız gibi sizi tanıtan
@@ -205,7 +216,9 @@
       (kilo, öğün, egzersiz, adım) siz girersiniz ve bunların buluta
       eşitlenmesi hesap açarken onayladığınız bu metne dayanır. Girmeyebilirsiniz
       de; uygulama profil kurulumunu atlamanıza izin verir. AI Koç'u kullanmak
-      ve ona soru göndermek de tamamen sizin tercihinizdir.</li>
+      ve ona soru göndermek de tamamen sizin tercihinizdir. Profil bilgilerinizin
+      AI Koç için OpenAI'ye gönderilmesi, uygulamada ayrıca verdiğiniz
+      <strong>açık rızaya</strong> dayanır.</li>
 </ul>
 
 <h2>5. Kimlerle paylaşılıyor</h2>
@@ -227,7 +240,7 @@
       <td>Satın alma bilgileri (ödemeyi Google alır)</td></tr>
   <tr><td><strong>OpenAI</strong></td>
       <td>AI Koç'un cevaplarını üretmek</td>
-      <td>Yalnızca yazdığınız soru metni ve dil</td></tr>
+      <td>Soru metniniz, dil, o günkü sohbetiniz; onayınızla profil bilgileriniz (ad ve e-posta olmadan)</td></tr>
 </table>
 </div>
 
@@ -263,8 +276,8 @@
       Hesabınızı silene kadar.</li>
   <li><strong>Telefonunuzdaki veriler ve AI Koç sohbet geçmişi:</strong>
       Siz silene, hesabınızı silene ya da uygulamayı kaldırana kadar.</li>
-  <li><strong>AI Koç soruları:</strong> Sunucumuzda saklanmaz. OpenAI tarafında
-      OpenAI'nin kendi saklama süreleri geçerlidir.</li>
+  <li><strong>AI Koç soruları ve gönderilen profil bilgileri:</strong> Sunucumuzda
+      saklanmaz. OpenAI tarafında OpenAI'nin kendi saklama süreleri geçerlidir.</li>
   <li><strong>Abonelik kaydı:</strong> Hesabınız durdukça. Hesabınızı
       sildiğinizde abonelik bağlantısı hemen silinir; satın alma jetonunun
       özeti ve o günkü soru sayısı 48 saat sonra otomatik silinir.</li>
@@ -316,7 +329,8 @@
 <p>
   Uygulama <strong>13 yaşın altındakiler için tasarlanmamıştır</strong> ve
   profil kurulumunda 13'ten küçük bir yaş girilemez. AI Koç'un program
-  özelliği <strong>18 yaş ve üstü</strong> içindir. 13 yaşın altında bir
+  özelliği <strong>18 yaş ve üstü</strong> içindir; 18 yaşından küçük
+  kullanıcıların profil bilgileri AI Koç'a gönderilmez. 13 yaşın altında bir
   kullanıcıya ait hesap açıldığını fark edersek sileriz.
 </p>
 
@@ -330,8 +344,9 @@
   düzeltilmesini isteme, silinmesini veya yok edilmesini isteme ve işlemenin
   münhasıran otomatik sistemlerle analiz edilmesi suretiyle aleyhinize bir
   sonuç doğmasına itiraz etme haklarına sahipsiniz. Verdiğiniz açık rızayı
-  istediğiniz zaman geri alabilirsiniz; bunun en kolay yolu hesabınızı
-  silmektir.
+  istediğiniz zaman geri alabilirsiniz: AI Koç için verdiğiniz profil onayını
+  geri almak isterseniz bize e-posta ile yazabilir ya da hesabınızı
+  silebilirsiniz.
 </p>
 
 <p>

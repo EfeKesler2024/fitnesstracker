@@ -27,9 +27,11 @@
   and the fitness data you enter (your profile, meals, workouts, water, step
   and weight logs) are stored <strong>on Google Firebase servers, linked to
   your account</strong>, so your records are not lost when you change phones.
-  <strong>Questions you ask AI Coach</strong> are sent to OpenAI to generate an
-  answer, but your name, email address and fitness data are not sent, and
-  questions and answers are not stored on our servers. No ads, no analytics,
+  <strong>Questions you ask AI Coach</strong> and that day's conversation are sent
+  to OpenAI to generate an answer; <strong>if you agree</strong>, your profile
+  details (age, height, weight, sex, activity level, goal, daily targets) are
+  added so answers fit you. Your name, email address and meal/workout logs are
+  not sent, and questions and answers are not stored on our servers. No ads, no analytics,
   no selling of data.</p>
 </div>
 
@@ -121,13 +123,22 @@
 </p>
 
 <ul>
-  <li><strong>"Ask AI Coach":</strong> The <strong>text of your question</strong>
-      and the app language are sent through our server (Google Cloud Functions)
-      to <strong>OpenAI</strong> to generate an answer. Your name, email address,
-      account ID and fitness data are <strong>not included</strong>. Your
-      questions and the answers are <strong>not stored</strong> on our server.
-      Your chat history is kept only on your phone, is excluded from phone
-      backups, and is deleted when you delete your account.
+  <li><strong>"Ask AI Coach":</strong> The <strong>text of your question</strong>,
+      the app language and, so it can follow the conversation,
+      <strong>your earlier questions and answers from the same day</strong> are
+      sent through our server (Google Cloud Functions) to <strong>OpenAI</strong>
+      to generate an answer. Conversations from previous days are not sent.
+      <br><strong>Profile details (only with your consent):</strong> You are asked
+      at your first question. If you agree, your profile's age, height, weight,
+      sex, activity level, goal and daily calorie/step/water targets are sent
+      with the question so answers fit you. If you decline, answers are general
+      and you are not asked again that day. Profile details of users under 18
+      are never sent.
+      <br>Your name, email address, account ID and your meal, workout, water,
+      step and weight logs are <strong>not included</strong>. Your questions,
+      profile details and the answers are <strong>not stored</strong> on our
+      server. Your chat history is kept only on your phone, is excluded from
+      phone backups, and is deleted when you delete your account.
       <br><em>If you write health information into your question yourself (for
       example an illness, medication or injury), that information is sent to
       OpenAI together with the question. We recommend not including anything
@@ -202,7 +213,9 @@
       health-related information (weight, meals, workouts, steps) yourself, and
       syncing it to the cloud is based on this policy, which you accept when
       creating an account. You may leave it out; the app lets you skip profile
-      setup. Using AI Coach and sending it questions is entirely your choice.</li>
+      setup. Using AI Coach and sending it questions is entirely your choice.
+      Sending your profile details to OpenAI for AI Coach is based on the
+      separate <strong>explicit consent</strong> you give in the app.</li>
 </ul>
 
 <h2>5. Who it is shared with</h2>
@@ -223,7 +236,7 @@
       <td>Purchase information (Google takes the payment)</td></tr>
   <tr><td><strong>OpenAI</strong></td>
       <td>Generating AI Coach answers</td>
-      <td>Only the question text you write and the language</td></tr>
+      <td>Your question text, the language, that day's conversation; with your consent, your profile details (no name or email)</td></tr>
 </table>
 </div>
 
@@ -260,8 +273,8 @@
       Until you delete your account.</li>
   <li><strong>Data on your phone and your AI Coach chat history:</strong> Until
       you delete it, delete your account or uninstall the app.</li>
-  <li><strong>AI Coach questions:</strong> Not stored on our server. OpenAI's own
-      retention periods apply on its side.</li>
+  <li><strong>AI Coach questions and profile details sent with them:</strong> Not
+      stored on our server. OpenAI's own retention periods apply on its side.</li>
   <li><strong>Subscription record:</strong> For as long as your account exists.
       When you delete your account the subscription link is deleted
       immediately; the purchase-token digest and that day's question count are
@@ -315,7 +328,8 @@
 <p>
   The app is <strong>not designed for children under 13</strong>, and an age
   under 13 cannot be entered during profile setup. The AI Coach program
-  feature is for <strong>ages 18 and over</strong>. If we learn that an account
+  feature is for <strong>ages 18 and over</strong>, and profile details of users
+  under 18 are not sent to AI Coach. If we learn that an account
   belongs to a child under 13, we will delete it.
 </p>
 
@@ -329,7 +343,8 @@
   to in Türkiye or abroad, to request correction of incomplete or inaccurate
   data, to request its deletion or destruction, and to object to a result
   against you arising solely from automated analysis. You can withdraw your
-  explicit consent at any time; the easiest way is to delete your account.
+  explicit consent at any time: to withdraw the profile consent you gave for AI
+  Coach, email us or delete your account.
 </p>
 
 <p>
