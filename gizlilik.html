@@ -13,7 +13,7 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Gizlilik Politikası</h1>
-  <p class="updated">Yürürlük tarihi: 28 Eylül 2026</p>
+  <p class="updated">Yürürlük tarihi: 30 Eylül 2026</p>
 </header>
 
 <p>
@@ -32,7 +32,9 @@
   <strong>onay verirseniz</strong> cevapların size göre olması için profil
   bilgileriniz (yaş, boy, kilo, cinsiyet, hareket düzeyi, hedef, günlük
   hedefler) de eklenir. Adınız, e-postanız ve öğün/egzersiz kayıtlarınız
-  gönderilmez; sorular ve cevaplar sunucularımızda saklanmaz. Reklam yok, analiz aracı yok, veri satışı yok.</p>
+  gönderilmez; sorular ve cevaplar sunucularımızda saklanmaz. <strong>Görsel
+  analizde</strong> seçtiğiniz fotoğraf, onayınızla, küçültülüp konum bilgisi
+  silinerek OpenAI'ye gönderilir ve saklanmaz. Reklam yok, analiz aracı yok, veri satışı yok.</p>
 </div>
 
 <h2>1. Veri sorumlusu</h2>
@@ -153,10 +155,24 @@
       yaşınız, boyunuz, kilonuz ve cinsiyetiniz <strong>adınız ve e-postanız
       olmadan</strong> gönderilecek ve bunun için sizden ayrıca onay
       istenecek; o zaman bu metni de güncelleyeceğiz.</li>
-  <li><strong>Görsel analiz:</strong> Şu anda yalnızca örnek bir sonuç
-      gösterir. Galeriden seçtiğiniz fotoğraf <strong>telefonunuzdan çıkmaz</strong>,
-      hiçbir sunucuya yüklenmez ve saklanmaz. Uygulama galerinize genel erişim
-      izni istemez; yalnızca sizin seçtiğiniz tek fotoğrafı görür.</li>
+  <li><strong>Görsel analiz (abonelikle, günde en fazla 5):</strong> Galeriden
+      seçtiğiniz <strong>tek fotoğraf</strong>, seçtiğiniz analiz türü (hareket ve
+      duruş, öğün, diğer) ve isteğe bağlı sorunuz, analiz için sunucumuz
+      üzerinden <strong>OpenAI</strong>'ye gönderilir. İlk analizde bunun için
+      <strong>onayınız</strong> istenir.
+      <br>Fotoğraf göndermeden önce telefonunuzda küçültülür (uzun kenarı en fazla
+      1024 piksel) ve yeniden kaydedilir; bu sırada <strong>konum dahil fotoğraf
+      bilgileri (EXIF) silinir</strong>. Fotoğraf sunucumuzda, Firebase'de ya da
+      telefonunuzda başka bir yerde <strong>saklanmaz</strong>; yalnızca o analiz
+      için gönderilir. Adınız, e-postanız, profiliniz ve kayıtlarınız bu isteğe
+      eklenmez. Uygulama galerinize genel erişim izni istemez; yalnızca sizin
+      seçtiğiniz fotoğrafı görür.
+      <br><em>Fotoğrafta yüzünüz ya da başka kişiler varsa bunlar da görüntünün
+      bir parçası olarak gönderilir. Kendinizi ya da başkalarını tanıtan
+      fotoğraflar göndermemenizi öneririz. AI Koç'a fotoğraftaki kişileri
+      tanımaması talimatı verilmiştir.</em>
+      <br>Öğün fotoğraflarındaki kalori ve besin değerleri <strong>tahmindir</strong>
+      ve gerçek değerlerden çok farklı olabilir.</li>
 </ul>
 
 <h3>Abonelik ve ödeme (Google Play)</h3>
@@ -216,9 +232,9 @@
       (kilo, öğün, egzersiz, adım) siz girersiniz ve bunların buluta
       eşitlenmesi hesap açarken onayladığınız bu metne dayanır. Girmeyebilirsiniz
       de; uygulama profil kurulumunu atlamanıza izin verir. AI Koç'u kullanmak
-      ve ona soru göndermek de tamamen sizin tercihinizdir. Profil bilgilerinizin
-      AI Koç için OpenAI'ye gönderilmesi, uygulamada ayrıca verdiğiniz
-      <strong>açık rızaya</strong> dayanır.</li>
+      ve ona soru göndermek de tamamen sizin tercihinizdir. Profil bilgilerinizin ve
+      görsel analiz için seçtiğiniz fotoğrafların AI Koç için OpenAI'ye
+      gönderilmesi, uygulamada ayrıca verdiğiniz <strong>açık rızaya</strong> dayanır.</li>
 </ul>
 
 <h2>5. Kimlerle paylaşılıyor</h2>
@@ -240,7 +256,7 @@
       <td>Satın alma bilgileri (ödemeyi Google alır)</td></tr>
   <tr><td><strong>OpenAI</strong></td>
       <td>AI Koç'un cevaplarını üretmek</td>
-      <td>Soru metniniz, dil, o günkü sohbetiniz; onayınızla profil bilgileriniz (ad ve e-posta olmadan)</td></tr>
+      <td>Soru metniniz, dil, o günkü sohbetiniz; onayınızla profil bilgileriniz (ad ve e-posta olmadan); görsel analizde, onayınızla, küçültülmüş ve konum bilgisi silinmiş fotoğrafınız</td></tr>
 </table>
 </div>
 
@@ -276,7 +292,7 @@
       Hesabınızı silene kadar.</li>
   <li><strong>Telefonunuzdaki veriler ve AI Koç sohbet geçmişi:</strong>
       Siz silene, hesabınızı silene ya da uygulamayı kaldırana kadar.</li>
-  <li><strong>AI Koç soruları ve gönderilen profil bilgileri:</strong> Sunucumuzda
+  <li><strong>AI Koç soruları, gönderilen profil bilgileri ve fotoğraflar:</strong> Sunucumuzda
       saklanmaz. OpenAI tarafında OpenAI'nin kendi saklama süreleri geçerlidir.</li>
   <li><strong>Abonelik kaydı:</strong> Hesabınız durdukça. Hesabınızı
       sildiğinizde abonelik bağlantısı hemen silinir; satın alma jetonunun
@@ -376,7 +392,7 @@
 </nav>
 
 <footer class="doc">
-  FitnessTracker — Gizlilik Politikası, 28 Eylül 2026
+  FitnessTracker — Gizlilik Politikası, 30 Eylül 2026
 </footer>
 
 </main>

@@ -13,7 +13,7 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Privacy Policy</h1>
-  <p class="updated">Effective date: 28 September 2026</p>
+  <p class="updated">Effective date: 30 September 2026</p>
 </header>
 
 <p>
@@ -31,7 +31,9 @@
   to OpenAI to generate an answer; <strong>if you agree</strong>, your profile
   details (age, height, weight, sex, activity level, goal, daily targets) are
   added so answers fit you. Your name, email address and meal/workout logs are
-  not sent, and questions and answers are not stored on our servers. No ads, no analytics,
+  not sent, and questions and answers are not stored on our servers. For
+  <strong>image analysis</strong>, the photo you pick is, with your consent, resized,
+  stripped of location data and sent to OpenAI; it is not stored. No ads, no analytics,
   no selling of data.</p>
 </div>
 
@@ -148,10 +150,22 @@
       your age, height, weight and sex will be sent <strong>without your name
       or email address</strong> to tailor the program, you will be asked for
       separate consent, and we will update this policy.</li>
-  <li><strong>Image analysis:</strong> Currently shows only a sample result. The
-      photo you pick from your gallery <strong>never leaves your phone</strong>,
-      is not uploaded to any server and is not stored. The app does not ask for
-      general access to your gallery; it only sees the single photo you pick.</li>
+  <li><strong>Image analysis (with the subscription, up to 5 a day):</strong> The
+      <strong>single photo</strong> you pick from your gallery, the analysis type you
+      choose (movement and posture, meal, other) and your optional question are
+      sent through our server to <strong>OpenAI</strong> for analysis. You are asked
+      for your <strong>consent</strong> before the first analysis.
+      <br>Before sending, the photo is resized on your phone (longest side at most
+      1024 pixels) and re-saved, which <strong>removes photo metadata (EXIF),
+      including location</strong>. The photo is <strong>not stored</strong> on our
+      server, in Firebase or anywhere else on your phone; it is sent only for that
+      analysis. Your name, email, profile and logs are not included. The app does
+      not ask for general access to your gallery; it only sees the photo you pick.
+      <br><em>If your face or other people appear in the photo, they are sent as
+      part of the image. We recommend not sending photos that identify you or
+      others. AI Coach is instructed not to identify people in photos.</em>
+      <br>Calorie and nutrient values from meal photos are <strong>estimates</strong>
+      and can differ a lot from the real values.</li>
 </ul>
 
 <h3>Subscription and payment (Google Play)</h3>
@@ -214,8 +228,9 @@
       syncing it to the cloud is based on this policy, which you accept when
       creating an account. You may leave it out; the app lets you skip profile
       setup. Using AI Coach and sending it questions is entirely your choice.
-      Sending your profile details to OpenAI for AI Coach is based on the
-      separate <strong>explicit consent</strong> you give in the app.</li>
+      Sending your profile details and the photos you pick for image analysis to
+      OpenAI for AI Coach is based on the separate <strong>explicit consent</strong>
+      you give in the app.</li>
 </ul>
 
 <h2>5. Who it is shared with</h2>
@@ -236,7 +251,7 @@
       <td>Purchase information (Google takes the payment)</td></tr>
   <tr><td><strong>OpenAI</strong></td>
       <td>Generating AI Coach answers</td>
-      <td>Your question text, the language, that day's conversation; with your consent, your profile details (no name or email)</td></tr>
+      <td>Your question text, the language, that day's conversation; with your consent, your profile details (no name or email); for image analysis, with your consent, your resized photo without location data</td></tr>
 </table>
 </div>
 
@@ -273,7 +288,7 @@
       Until you delete your account.</li>
   <li><strong>Data on your phone and your AI Coach chat history:</strong> Until
       you delete it, delete your account or uninstall the app.</li>
-  <li><strong>AI Coach questions and profile details sent with them:</strong> Not
+  <li><strong>AI Coach questions, profile details and photos sent with them:</strong> Not
       stored on our server. OpenAI's own retention periods apply on its side.</li>
   <li><strong>Subscription record:</strong> For as long as your account exists.
       When you delete your account the subscription link is deleted
@@ -374,7 +389,7 @@
 </nav>
 
 <footer class="doc">
-  FitnessTracker — Privacy Policy, 28 September 2026
+  FitnessTracker — Privacy Policy, 30 September 2026
 </footer>
 
 </main>
