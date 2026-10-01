@@ -13,7 +13,7 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Gizlilik Politikası</h1>
-  <p class="updated">Yürürlük tarihi: 30 Eylül 2026</p>
+  <p class="updated">Yürürlük tarihi: 1 Ekim 2026</p>
 </header>
 
 <p>
@@ -38,6 +38,19 @@
 </div>
 
 <h2>1. Veri sorumlusu</h2>
+
+<div class="box">
+  <p><strong>İsteğe bağlı içerik bildirimi istisnası:</strong> Normal AI
+  isteklerini sunucumuzda kaydetmeyiz. Ancak uygulama içindeki <em>Bildir</em>
+  düğmesine basıp ayrıca onaylarsanız, yalnızca seçtiğiniz cevap veya program
+  metni ve hesap kimliğiniz, güvenlik incelemesi için Firebase'de saklanır.
+  Fotoğrafınız, tüm sohbetiniz, e-posta adresiniz ve profiliniz bu bildirime
+  eklenmez. Seçilen metin kendiliğinden kişisel/sağlık bilgisi içerebilir.
+  Bildirimler 30 gün sonra otomatik silinmek üzere işaretlenir; Firebase TTL
+  silme işlemi gecikmeli tamamlanabilir. Hesabınızı silerseniz bildirimleriniz
+  de sunucudaki hesap silme işlemiyle kaldırılır. Bildirim günlük AI hakkını
+  tüketmez. İnceleme yetkisi yalnızca geliştiricide/yetkili işletmendedir.</p>
+</div>
 
 <p>
   Uygulamanın geliştiricisi ve bu metin kapsamında veri sorumlusu:
@@ -149,12 +162,21 @@
       ilaç veya sakatlık), bu bilgi de soruyla birlikte OpenAI'ye gider.
       Bu yüzden sorularınıza adınız, kimlik numaranız gibi sizi tanıtan
       bilgiler yazmamanızı öneririz.</em></li>
-  <li><strong>Program hazırlama:</strong> Şu anda telefonunuzda, sabit
-      kurallarla çalışır ve hiçbir bilgi dışarı gönderilmez. İleride bir
-      yapay zekâ servisine bağlanırsa, programı size göre hazırlamak için
-      yaşınız, boyunuz, kilonuz ve cinsiyetiniz <strong>adınız ve e-postanız
-      olmadan</strong> gönderilecek ve bunun için sizden ayrıca onay
-      istenecek; o zaman bu metni de güncelleyeceğiz.</li>
+  <li><strong>Program hazırlama (abonelikle, günde en fazla 3):</strong>
+      Program sihirbazındaki cevaplarınız (hedef, seviye, haftalık gün sayısı,
+      ekipman, hassas bölgeler), her adımda yazdığınız notlar ve uygulamanın
+      dili, haftalık programınızı hazırlaması için sunucumuz üzerinden
+      <strong>OpenAI</strong>'ye gönderilir. İlk programdan önce sorulan
+      <strong>onayınızla</strong> profilinizdeki <strong>yaşınız, boyunuz,
+      kilonuz ve cinsiyetiniz</strong> de gönderilir; bu özellik 18 yaşından
+      küçüklere açık değildir.
+      <br>Adınız, e-postanız, hesap kimliğiniz ve öğün, egzersiz, su, adım ve
+      kilo kayıtlarınız <strong>eklenmez</strong>. Cevaplarınız, notlarınız ve
+      program sunucumuzda <strong>kaydedilmez</strong>. Program yazılırken
+      ekranınızda gösterilir; yalnızca <em>Programı kaydet</em>'i seçerseniz
+      hesabınıza kaydedilir.
+      <br><em>Notlarınıza kendiniz sağlık bilgisi yazarsanız (ör. bir sakatlık
+      ya da hastalık), bu bilgi de istekle birlikte OpenAI'ye gider.</em></li>
   <li><strong>Görsel analiz (abonelikle, günde en fazla 5):</strong> Galeriden
       seçtiğiniz <strong>tek fotoğraf</strong>, seçtiğiniz analiz türü (hareket ve
       duruş, öğün, diğer) ve isteğe bağlı sorunuz, analiz için sunucumuz
@@ -286,6 +308,11 @@
 </p>
 
 <h2>6. Ne kadar süre saklanıyor</h2>
+
+<p>OpenAI'nin standart API kötüye kullanım izleme kayıtları, içerikleri
+genellikle 30 güne kadar, yasal zorunluluklarda daha uzun tutabilir.
+<code>store:false</code> bu güvenlik kayıtlarını kaldırmaz. Ayrıntılar:
+<a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI API veri kontrolleri</a>.</p>
 
 <ul>
   <li><strong>Hesap bilgileriniz ve buluttaki fitness verileriniz:</strong>

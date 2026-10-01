@@ -13,7 +13,7 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Privacy Policy</h1>
-  <p class="updated">Effective date: 30 September 2026</p>
+  <p class="updated">Effective date: 1 October 2026</p>
 </header>
 
 <p>
@@ -38,6 +38,19 @@
 </div>
 
 <h2>1. Data controller</h2>
+
+<div class="box">
+  <p><strong>Optional content reporting exception:</strong> We do not store
+  normal AI requests on our server. If you tap <em>Report</em> in the app and
+  confirm, only the selected answer or program text and your account ID are
+  stored in Firebase for safety review. Your photo, full conversation, email
+  and profile are not added. The selected text may itself contain personal
+  or health information. Reports are scheduled for automatic deletion after
+  30 days; Firebase TTL deletion may complete later. Reports are also removed
+  by server-side account deletion when you delete your account. Reporting
+  does not consume AI allowance. Only the developer/authorized operator can
+  review reports.</p>
+</div>
 
 <p>
   The developer of the app and the data controller for this policy:
@@ -145,11 +158,20 @@
       example an illness, medication or injury), that information is sent to
       OpenAI together with the question. We recommend not including anything
       that identifies you, such as your name or ID number.</em></li>
-  <li><strong>Program builder:</strong> Currently runs on your phone using fixed
-      rules and sends nothing out. If it is later connected to an AI service,
-      your age, height, weight and sex will be sent <strong>without your name
-      or email address</strong> to tailor the program, you will be asked for
-      separate consent, and we will update this policy.</li>
+  <li><strong>Program builder (with the subscription, up to 3 a day):</strong>
+      Your answers in the program wizard (goal, level, days per week,
+      equipment, sensitive areas), the notes you type at each step and the app
+      language are sent through our server to <strong>OpenAI</strong> to create
+      your weekly program. With your <strong>consent</strong> (asked before the
+      first program), your profile's <strong>age, height, weight and sex</strong>
+      are sent as well; this feature is not available to users under 18.
+      <br>Your name, email address, account ID and your meal, workout, water,
+      step and weight logs are <strong>not included</strong>. Your answers, notes
+      and the program are <strong>not stored</strong> on our server. The program
+      is shown on your screen while it is being written; it is saved to your
+      account only if you choose <em>Save program</em>.
+      <br><em>If you type health information into your notes (for example an
+      injury or illness), it is sent to OpenAI together with the request.</em></li>
   <li><strong>Image analysis (with the subscription, up to 5 a day):</strong> The
       <strong>single photo</strong> you pick from your gallery, the analysis type you
       choose (movement and posture, meal, other) and your optional question are
@@ -282,6 +304,11 @@
 </p>
 
 <h2>6. How long it is kept</h2>
+
+<p>OpenAI's standard API abuse-monitoring logs may retain content, usually
+for up to 30 days or longer if legally required. <code>store:false</code>
+does not remove those security logs. See
+<a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI API data controls</a>.</p>
 
 <ul>
   <li><strong>Your account information and fitness data in the cloud:</strong>
