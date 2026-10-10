@@ -13,7 +13,7 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Privacy Policy</h1>
-  <p class="updated">Effective date: 1 October 2026</p>
+  <p class="updated">Effective date: 10 October 2026</p>
 </header>
 
 <p>
@@ -143,11 +143,9 @@
       <strong>your earlier questions and answers from the same day</strong> are
       sent through our server (Google Cloud Functions) to <strong>OpenAI</strong>
       to generate an answer. Conversations from previous days are not sent.
-      <br><strong>Profile details (only with your consent):</strong> You are asked
-      at your first question. If you agree, your profile's age, height, weight,
+      <br><strong>Profile details (only with your consent):</strong> One shared AI permission covers questions, programs and photo analysis. If you agree, your profile's age, height, weight,
       sex, activity level, goal and daily calorie/step/water targets are sent
-      with the question so answers fit you. If you decline, answers are general
-      and you are not asked again that day. Profile details of users under 18
+      with the question so answers fit you. If you decline, no AI request is sent. Profile details of users under 18
       are never sent.
       <br>Your name, email address, account ID and your meal, workout, water,
       step and weight logs are <strong>not included</strong>. Your questions,
@@ -158,12 +156,11 @@
       example an illness, medication or injury), that information is sent to
       OpenAI together with the question. We recommend not including anything
       that identifies you, such as your name or ID number.</em></li>
-  <li><strong>Program builder (with the subscription, up to 3 a day):</strong>
+  <li><strong>Program builder (with the subscription, up to 1 a day):</strong>
       Your answers in the program wizard (goal, level, days per week,
       equipment, sensitive areas), the notes you type at each step and the app
       language are sent through our server to <strong>OpenAI</strong> to create
-      your weekly program. With your <strong>consent</strong> (asked before the
-      first program), your profile's <strong>age, height, weight and sex</strong>
+      your weekly program. With your shared AI <strong>consent</strong>, your profile's <strong>age, height, weight and sex</strong>
       are sent as well; this feature is not available to users under 18.
       <br>Your name, email address, account ID and your meal, workout, water,
       step and weight logs are <strong>not included</strong>. Your answers, notes
@@ -172,11 +169,10 @@
       account only if you choose <em>Save program</em>.
       <br><em>If you type health information into your notes (for example an
       injury or illness), it is sent to OpenAI together with the request.</em></li>
-  <li><strong>Image analysis (with the subscription, up to 5 a day):</strong> The
+  <li><strong>Image analysis (with the subscription, up to 2 a day):</strong> The
       <strong>single photo</strong> you pick from your gallery, the analysis type you
       choose (movement and posture, meal, other) and your optional question are
-      sent through our server to <strong>OpenAI</strong> for analysis. You are asked
-      for your <strong>consent</strong> before the first analysis.
+      sent through our server to <strong>OpenAI</strong> for analysis. This also requires your shared AI <strong>consent</strong>.
       <br>Before sending, the photo is resized on your phone (longest side at most
       1024 pixels) and re-saved, which <strong>removes photo metadata (EXIF),
       including location</strong>. The photo is <strong>not stored</strong> on our
@@ -204,7 +200,7 @@
       server, linked to your account, and before each AI Coach question we ask
       Google Play whether the subscription is still active. The app itself
       cannot read this token.</li>
-  <li>To count your daily question allowance (10 questions a day), an
+  <li>To count your daily question allowance (3 questions a day), an
       irreversible digest (hash) of the purchase token and that day's question
       count are stored.</li>
 </ul>
@@ -385,9 +381,22 @@ does not remove those security logs. See
   to in Türkiye or abroad, to request correction of incomplete or inaccurate
   data, to request its deletion or destruction, and to object to a result
   against you arising solely from automated analysis. You can withdraw your
-  explicit consent at any time: to withdraw the profile consent you gave for AI
-  Coach, email us or delete your account.
+  explicit consent at any time. In the updated app, Profile →
+  <strong>AI sharing permission</strong> lets you select <strong>Allow</strong>
+  or <strong>Remove permission</strong> for one permission covering questions,
+  program generation and photo analysis together for your account on this device.
+  If removed, consent is requested again before a new share. Started
+  requests and previously sent data cannot be recalled; this does not cancel
+  your subscription or delete records or reports. Consent is separate on
+  each device. If this option is absent in an older version, email us or
+  delete your account.
 </p>
+
+<p>Profile → <strong>Step counter and data use</strong> lets you disable sensor
+readings and background step counting for your account on this device.
+Previously recorded totals are not deleted. Before step counting starts,
+sensor use, background readings and transfer of daily totals to your Firebase
+account are explained and your consent is requested.</p>
 
 <p>
   To use these rights, simply write to fitness.tracker.2027@gmail.com. We will

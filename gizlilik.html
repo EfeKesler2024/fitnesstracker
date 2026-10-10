@@ -13,7 +13,7 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Gizlilik Politikası</h1>
-  <p class="updated">Yürürlük tarihi: 1 Ekim 2026</p>
+  <p class="updated">Yürürlük tarihi: 10 Ekim 2026</p>
 </header>
 
 <p>
@@ -146,12 +146,10 @@
       <strong>o günkü önceki soru-cevaplarınız</strong>, sunucumuz (Google Cloud
       Functions) üzerinden cevap üretmesi için <strong>OpenAI</strong>'ye
       gönderilir. Önceki günlerin sohbeti gönderilmez.
-      <br><strong>Profil bilgileri (yalnızca onayınızla):</strong> İlk sorunuzda
-      size sorulur. Kabul ederseniz, cevapların size göre olması için
+      <br><strong>Profil bilgileri (yalnızca onayınızla):</strong> Soru, program ve fotoğraf analizi için ortak AI paylaşım izniniz alınır. Kabul ederseniz, cevapların size göre olması için
       profilinizdeki yaşınız, boyunuz, kilonuz, cinsiyetiniz, hareket
       düzeyiniz, hedefiniz ve günlük kalori/adım/su hedefleriniz de soruyla
-      birlikte gönderilir. Kabul etmezseniz cevaplar genel olur ve o gün
-      yeniden sorulmaz. 18 yaşından küçük kullanıcıların profil bilgileri hiç
+      birlikte gönderilir. Kabul etmezseniz AI isteği gönderilmez. 18 yaşından küçük kullanıcıların profil bilgileri hiç
       gönderilmez.
       <br>Adınız, e-postanız, hesap kimliğiniz ve öğün, egzersiz, su, adım ve
       kilo kayıtlarınız bu isteğe <strong>eklenmez</strong>. Sorularınız, profil
@@ -162,12 +160,11 @@
       ilaç veya sakatlık), bu bilgi de soruyla birlikte OpenAI'ye gider.
       Bu yüzden sorularınıza adınız, kimlik numaranız gibi sizi tanıtan
       bilgiler yazmamanızı öneririz.</em></li>
-  <li><strong>Program hazırlama (abonelikle, günde en fazla 3):</strong>
+  <li><strong>Program hazırlama (abonelikle, günde en fazla 1):</strong>
       Program sihirbazındaki cevaplarınız (hedef, seviye, haftalık gün sayısı,
       ekipman, hassas bölgeler), her adımda yazdığınız notlar ve uygulamanın
       dili, haftalık programınızı hazırlaması için sunucumuz üzerinden
-      <strong>OpenAI</strong>'ye gönderilir. İlk programdan önce sorulan
-      <strong>onayınızla</strong> profilinizdeki <strong>yaşınız, boyunuz,
+      <strong>OpenAI</strong>'ye gönderilir. Ortak AI paylaşım <strong>onayınızla</strong> profilinizdeki <strong>yaşınız, boyunuz,
       kilonuz ve cinsiyetiniz</strong> de gönderilir; bu özellik 18 yaşından
       küçüklere açık değildir.
       <br>Adınız, e-postanız, hesap kimliğiniz ve öğün, egzersiz, su, adım ve
@@ -177,11 +174,10 @@
       hesabınıza kaydedilir.
       <br><em>Notlarınıza kendiniz sağlık bilgisi yazarsanız (ör. bir sakatlık
       ya da hastalık), bu bilgi de istekle birlikte OpenAI'ye gider.</em></li>
-  <li><strong>Görsel analiz (abonelikle, günde en fazla 5):</strong> Galeriden
+  <li><strong>Görsel analiz (abonelikle, günde en fazla 2):</strong> Galeriden
       seçtiğiniz <strong>tek fotoğraf</strong>, seçtiğiniz analiz türü (hareket ve
       duruş, öğün, diğer) ve isteğe bağlı sorunuz, analiz için sunucumuz
-      üzerinden <strong>OpenAI</strong>'ye gönderilir. İlk analizde bunun için
-      <strong>onayınız</strong> istenir.
+      üzerinden <strong>OpenAI</strong>'ye gönderilir. Bu paylaşım da ortak AI paylaşım <strong>onayınıza</strong> bağlıdır.
       <br>Fotoğraf göndermeden önce telefonunuzda küçültülür (uzun kenarı en fazla
       1024 piksel) ve yeniden kaydedilir; bu sırada <strong>konum dahil fotoğraf
       bilgileri (EXIF) silinir</strong>. Fotoğraf sunucumuzda, Firebase'de ya da
@@ -211,7 +207,7 @@
       bağlı olarak sunucumuzda saklanır ve her AI Koç sorusundan önce
       aboneliğin hâlâ aktif olduğu Google Play'e sorulur. Bu jeton
       uygulamanın kendisi tarafından da okunamaz.</li>
-  <li>Günlük soru hakkınızın (günde 10 soru) hesaplanması için, satın alma
+  <li>Günlük soru hakkınızın (günde 3 soru) hesaplanması için, satın alma
       jetonunun geri döndürülemez bir özeti (karması) ile o günkü soru sayınız
       saklanır.</li>
 </ul>
@@ -387,10 +383,20 @@ genellikle 30 güne kadar, yasal zorunluluklarda daha uzun tutabilir.
   düzeltilmesini isteme, silinmesini veya yok edilmesini isteme ve işlemenin
   münhasıran otomatik sistemlerle analiz edilmesi suretiyle aleyhinize bir
   sonuç doğmasına itiraz etme haklarına sahipsiniz. Verdiğiniz açık rızayı
-  istediğiniz zaman geri alabilirsiniz: AI Koç için verdiğiniz profil onayını
-  geri almak isterseniz bize e-posta ile yazabilir ya da hesabınızı
-  silebilirsiniz.
+  istediğiniz zaman geri alabilirsiniz. Güncel uygulamada Profil →
+  <strong>AI paylaşım izni</strong> bölümünde soru-cevap, program ve fotoğraf analizini birlikte kapsayan tek izin için <strong>İzin ver</strong> veya
+  <strong>İzni kaldır</strong> seçebilirsiniz. İzin bu cihazdaki hesabınız
+  için tutulur; kaldırıldığında sonraki paylaşım için tekrar onay istenir. Başlamış istekler ve
+  önceden gönderilmiş veriler geri çekilmez; abonelik iptal edilmez, kayıtlar
+  ve bildirimler silinmez. Her cihazdaki onay ayrıdır. Eski sürümlerde bu
+  seçenek yoksa bize e-posta ile yazabilir ya da hesabınızı silebilirsiniz.
 </p>
+
+<p>Profil → <strong>Adım sayacı ve veri kullanımı</strong> bölümünden bu
+cihazdaki hesabınız için sensör okumalarını ve arka plan adım sayımını
+kapatabilirsiniz. Önceden kaydedilmiş adım toplamları silinmez. Adım sayımı
+başlamadan önce sensör kullanımı, arka plan okumaları ve günlük toplamın
+Firebase hesabınıza gönderilmesi açıklanır ve onayınız alınır.</p>
 
 <p>
   Bu hakları kullanmak için fitness.tracker.2027@gmail.com adresine yazmanız
