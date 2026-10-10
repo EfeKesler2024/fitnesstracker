@@ -156,7 +156,7 @@
       example an illness, medication or injury), that information is sent to
       OpenAI together with the question. We recommend not including anything
       that identifies you, such as your name or ID number.</em></li>
-  <li><strong>Program builder (with the subscription, up to 1 a day):</strong>
+  <li><strong>Program builder (with the subscription, up to 1 a week):</strong>
       Your answers in the program wizard (goal, level, days per week,
       equipment, sensitive areas), the notes you type at each step and the app
       language are sent through our server to <strong>OpenAI</strong> to create
@@ -197,12 +197,17 @@
 
 <ul>
   <li>The <strong>purchase token</strong> issued by Google Play is stored on our
-      server, linked to your account, and before each AI Coach question we ask
+      server, linked to your account, and before each AI Coach request we ask
       Google Play whether the subscription is still active. The app itself
       cannot read this token.</li>
-  <li>To count your daily question allowance (3 questions a day), an
-      irreversible digest (hash) of the purchase token and that day's question
-      count are stored.</li>
+  <li>To calculate your allowances, we store an irreversible digest (hash) of
+      the purchase token, the relevant usage dates and usage counters:
+      <strong>3 questions a day, 2 photo analyses a day and 1 program a week</strong>.
+      The program week starts on Monday at 00:00 Türkiye time; question and
+      photo allowances reset every day at 00:00 Türkiye time. We also store
+      daily refund counters to enforce at most 1 technical-failure allowance
+      refund per day for each allowance type. These counters do not contain
+      the question, answer, program input or photo itself.</li>
 </ul>
 
 <h2>3. What we do not collect</h2>
