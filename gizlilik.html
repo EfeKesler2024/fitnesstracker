@@ -25,7 +25,7 @@
 <div class="box">
   <p><strong>Özet:</strong> Uygulamayı kullanmak için bir hesap açmanız gerekir.
   Hesabınız ve girdiğiniz fitness verileri (profiliniz, öğünleriniz,
-  egzersizleriniz, su, adım ve kilo kayıtlarınız) <strong>Google Firebase
+  egzersizleriniz, su, adım ve kilo kayıtlarınız), <strong>ayrı bulut izniniz varsa Google Firebase
   sunucularında hesabınıza bağlı olarak</strong> saklanır; böylece telefon
   değiştirdiğinizde kayıtlarınız kaybolmaz. <strong>AI Koç'a sorduğunuz
   sorular</strong> ve o günkü sohbetiniz, cevaplanmak üzere OpenAI'ye gönderilir;
@@ -92,11 +92,13 @@
 <h3>Fitness verileriniz (Firebase Firestore)</h3>
 
 <p>
-  Girdiğiniz bilgiler hem telefonunuzda hem de Google'ın Firebase Firestore
-  veritabanında, <strong>yalnızca sizin hesabınızın erişebildiği</strong> bir
-  alanda saklanır. Bunun amacı, aynı hesapla başka bir telefondan girdiğinizde
-  kayıtlarınızın gelmesi ve telefonunuzu kaybettiğinizde verilerinizin
-  kaybolmamasıdır. Saklanan bilgiler:
+Girdiğiniz fitness bilgileri telefonunuzda saklanır. Güncel uygulamada,
+<strong>ayrı ve isteğe bağlı bulut izniniz varsa</strong> Google Firebase
+Firestore üzerinden hesabınıza eşitlenir. İzin vermeden yalnızca bu cihazda
+kullanabilirsiniz; bu durumda telefon değiştirince kayıtlarınız taşınmaz.
+Firestore kuralları diğer kullanıcıların hesabınızdaki kayıtlara erişmesini
+engeller; hizmetin yetkili işletmeni teknik yönetim için erişim sağlayabilir.
+İşlenen fitness bilgileri şunlardır:
 </p>
 
 <ul>
@@ -196,7 +198,7 @@
 <h3>Abonelik ve ödeme (Google Play)</h3>
 
 <p>
-  AI Koç aboneliğini <strong>Google Play</strong> üzerinden satın alırsınız.
+  Premium üyeliği (AI Koç dahil) <strong>Google Play</strong> üzerinden satın alırsınız.
   Kart bilgileriniz ve ödeme işlemi tamamen Google tarafından yönetilir;
   <strong>ödeme bilgilerinizi görmüyor ve saklamıyoruz</strong>. Aboneliğinizin
   geçerli olup olmadığını kontrol etmek için:
@@ -249,15 +251,17 @@
       günlük hakkın sayılması da satın aldığınız hizmeti sunmak içindir.</li>
   <li><strong>Meşru menfaat:</strong> Firebase'in tuttuğu bağlantı kayıtları,
       hesapların kötüye kullanımını önlemek içindir. Satın alma jetonunun
-      özetinin hesap silindikten sonra 48 saat tutulması, aynı günün soru
-      hakkının hesap silip yeniden açarak sıfırlanmasını önlemek içindir.</li>
-  <li><strong>Açık rıza:</strong> Fitness ve sağlıkla ilgili bilgilerinizi
-      (kilo, öğün, egzersiz, adım) siz girersiniz ve bunların buluta
-      eşitlenmesi hesap açarken onayladığınız bu metne dayanır. Girmeyebilirsiniz
-      de; uygulama profil kurulumunu atlamanıza izin verir. AI Koç'u kullanmak
-      ve ona soru göndermek de tamamen sizin tercihinizdir. Profil bilgilerinizin ve
-      görsel analiz için seçtiğiniz fotoğrafların AI Koç için OpenAI'ye
-      gönderilmesi, uygulamada ayrıca verdiğiniz <strong>açık rızaya</strong> dayanır.</li>
+      özetinin hesap silindikten sonra 48 saat tutulması, kullanım haklarının hesap silip yeniden açarak sıfırlanmasını önlemek içindir.</li>
+  <li><strong>Açık rıza:</strong> Fitness ve sağlık verilerinizin hedef
+      hesaplama, takip ve kayıt gösterimi amacıyla cihazda işlenmesi için
+      ayrı onay alınır. Bulutta saklama ve cihazlar arasında eşitleme için
+      ikinci, isteğe bağlı seçim sunulur. Kullanım koşullarını kabul etmek
+      veya gizlilik politikasını okumak bu onayların yerine geçmez.
+      Bulut izni vermemeniz cihazdaki fitness takibini engellemez.
+      AI Koç için soru, sohbet, program girdisi, izin verilen profil alanları
+      ve seçtiğiniz fotoğrafların OpenAI'ye gönderilmesi ayrıca açıklanır ve
+      ayrı AI paylaşım onayınıza bağlıdır. Adım sensörünün kullanımı için de
+      ayrıca izin alınır.</li>
 </ul>
 
 <h2>5. Kimlerle paylaşılıyor</h2>
@@ -302,10 +306,13 @@
 <h3>Yurt dışına aktarım</h3>
 
 <p>
-  Google ve OpenAI'nin sunucuları Türkiye dışında, ABD dahil başka ülkelerde
-  bulunabilir. Hesap açarak ve AI Koç'u kullanarak, yukarıda sayılan verilerin
-  bu hizmetleri sağlamak amacıyla yurt dışına aktarılmasına açık rıza vermiş
-  olursunuz. AI Koç'u kullanmazsanız OpenAI'ye hiçbir veri gönderilmez.
+Google ve OpenAI'nin sunucuları Türkiye dışında, ABD dahil başka ülkelerde
+bulunabilir. Firebase hesap ve abonelik hizmetleri ile izin verdiğiniz
+bulut eşitlemesi ve AI paylaşımı, ilgili verilerin bu sağlayıcılar tarafından
+yurt dışında işlenmesini içerebilir. <strong>Hesap açmak veya bu metni okumak,
+yurt dışına aktarıma açık rıza verdiğiniz anlamına gelmez.</strong> İşleme
+izinleri, yurt dışına aktarım için mevzuatın aradığı hukuki şartların yerine
+geçmez. AI Koç'u kullanmazsanız OpenAI'ye veri gönderilmez.
 </p>
 
 <h2>6. Ne kadar süre saklanıyor</h2>
@@ -324,7 +331,9 @@ genellikle 30 güne kadar, yasal zorunluluklarda daha uzun tutabilir.
       saklanmaz. OpenAI tarafında OpenAI'nin kendi saklama süreleri geçerlidir.</li>
   <li><strong>Abonelik kaydı:</strong> Hesabınız durdukça. Hesabınızı
       sildiğinizde abonelik bağlantısı hemen silinir; satın alma jetonunun
-      özeti ve o günkü soru sayısı 48 saat sonra otomatik silinir.</li>
+      özeti, kullanım tarihleri, soru/fotoğraf/program kullanım ve iade sayaçları
+      48 saat sonra otomatik silinmek üzere işaretlenir. Firebase TTL
+      temizliği gecikmeli tamamlanabilir. Bu özet anonim veri sayılmaz.</li>
   <li><strong>Firebase'in güvenlik kayıtları:</strong> Google'ın kendi saklama
       süreleri geçerlidir.</li>
 </ul>
@@ -360,7 +369,8 @@ genellikle 30 güne kadar, yasal zorunluluklarda daha uzun tutabilir.
   <li>OpenAI'ye erişim anahtarı yalnızca sunucuda tutulur; uygulamanın içinde
       bulunmaz.</li>
   <li>Telefonunuzdaki veriler, Android'in uygulamalara ayırdığı özel alanda
-      tutulur; başka uygulamalar bu alanı okuyamaz.</li>
+      tutulur; başka uygulamalar bu alanı okuyamaz. Güncel sürümde yerel
+      veritabanı ve izin tercihleri Android yedeklemesine ve cihaz aktarımına dahil edilmez.</li>
 </ul>
 
 <p>
@@ -407,6 +417,20 @@ Firebase hesabınıza gönderilmesi açıklanır ve onayınız alınır.</p>
   Bu hakları kullanmak için fitness.tracker.2027@gmail.com adresine yazmanız
   yeterli. Talebinizi en geç 30 gün içinde yanıtlarız.
 </p>
+
+<h3>Fitness verileri için izinler</h3>
+<p>Güncel uygulamada Profil → <strong>Fitness verileri ve bulut eşitlemesi</strong>
+bölümünden bulut seçiminizi değiştirebilirsiniz. Bulut kutusunu boş bırakıp
+seçimleri kaydettiğinizde yeni eşitlemeler durur; başlamış veya Firebase
+kuyruğuna önceden alınmış yazmalar geri çağrılamaz. Eski bulut verileri otomatik
+silinmez; silme talebi veya hesap silme yolunu kullanın. Bulut iznini yeniden
+verirseniz cihazdaki mevcut fitness kayıtları da eşitlenir.
+<strong>İzinleri kaldır</strong> seçeneği yerel fitness işleme iznini de
+kaldırır, AI ve adım izinlerini temizler ve bu cihazda çıkış yapar. Mevcut
+kayıtlar silinmez; silinmesini ayrıca isteyebilirsiniz. Sonraki girişte yeni
+onay gerekir. Seçimler tarihleriyle birlikte yalnızca bu cihazdaki hesaba
+bağlı tutulur; eski koşul kabulleri otomatik olarak yeni rıza sayılmaz.
+Başka cihazlarınızın izinlerini de ayrı ayrı değiştirmeniz gerekir.</p>
 
 <h2>11. Bu metinde değişiklik</h2>
 

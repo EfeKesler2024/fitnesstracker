@@ -13,7 +13,7 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Account and Data Deletion</h1>
-  <p class="updated">Updated: 30 September 2026</p>
+  <p class="updated">Updated: 10 October 2026</p>
 </header>
 
 <p>
@@ -100,12 +100,12 @@
     <td><strong>Deleted</strong></td>
   </tr>
   <tr>
-    <td>Irreversible digest of the purchase token and that day's question count
+    <td>Irreversible purchase-token digest, usage dates and question/image/program usage and refund counters
         (no name or email)</td>
     <td>Firebase (Google servers)</td>
-    <td><strong>Deleted automatically after 48 hours.</strong> This prevents the
-        same day's question allowance from being reset by deleting and
-        recreating an account</td>
+    <td><strong>Marked for automatic deletion after 48 hours.</strong>
+        Firebase TTL cleanup may be delayed. This prevents usage allowances
+        from being reset by deleting and recreating an account. This digest is not anonymous data</td>
   </tr>
   <tr>
     <td>Questions, program requests and image-analysis photos you previously sent to AI Coach</td>
@@ -166,7 +166,7 @@ account deletion are retried automatically.</p>
 </nav>
 
 <footer class="doc">
-  FitnessTracker — Account Deletion, 30 September 2026
+  FitnessTracker — Account Deletion, 10 October 2026
 </footer>
 
 </main>

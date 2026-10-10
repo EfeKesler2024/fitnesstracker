@@ -25,7 +25,7 @@
 <div class="box">
   <p><strong>Summary:</strong> You need an account to use the app. Your account
   and the fitness data you enter (your profile, meals, workouts, water, step
-  and weight logs) are stored <strong>on Google Firebase servers, linked to
+  and weight logs) are stored, <strong>with your separate cloud permission, on Google Firebase servers, linked to
   your account</strong>, so your records are not lost when you change phones.
   <strong>Questions you ask AI Coach</strong> and that day's conversation are sent
   to OpenAI to generate an answer; <strong>if you agree</strong>, your profile
@@ -91,10 +91,13 @@
 <h3>Your fitness data (Firebase Firestore)</h3>
 
 <p>
-  The information you enter is stored both on your phone and in Google's
-  Firebase Firestore database, in an area that <strong>only your account can
-  access</strong>. This lets your records follow you when you sign in on
-  another phone and keeps them safe if you lose your phone. What is stored:
+Fitness information you enter is stored on your phone. In the updated app,
+it is synced to your account through Google Firebase Firestore <strong>only
+with separate, optional cloud permission</strong>. You can use fitness
+tracking on this device without cloud permission; your records then do not
+follow you to another phone. Firestore rules prevent other users from
+accessing your account records; an authorized operator can access them for
+technical administration. The fitness information processed includes:
 </p>
 
 <ul>
@@ -189,7 +192,7 @@
 <h3>Subscription and payment (Google Play)</h3>
 
 <p>
-  You buy the AI Coach subscription through <strong>Google Play</strong>. Your
+  You buy the Premium membership (including AI Coach) through <strong>Google Play</strong>. Your
   card details and the payment are handled entirely by Google;
   <strong>we do not see or store your payment information</strong>. To check
   whether your subscription is valid:
@@ -243,17 +246,17 @@
       service you paid for.</li>
   <li><strong>Legitimate interest:</strong> The connection records kept by
       Firebase are for preventing account abuse. Keeping the purchase-token
-      digest for 48 hours after account deletion prevents the same day's
-      question allowance from being reset by deleting and recreating an
+      digest for 48 hours after account deletion prevents the usage allowance from being reset by deleting and recreating an
       account.</li>
-  <li><strong>Explicit consent:</strong> You enter your fitness and
-      health-related information (weight, meals, workouts, steps) yourself, and
-      syncing it to the cloud is based on this policy, which you accept when
-      creating an account. You may leave it out; the app lets you skip profile
-      setup. Using AI Coach and sending it questions is entirely your choice.
-      Sending your profile details and the photos you pick for image analysis to
-      OpenAI for AI Coach is based on the separate <strong>explicit consent</strong>
-      you give in the app.</li>
+  <li><strong>Explicit consent:</strong> Separate approval is requested to
+      process fitness and health data on this device for target calculations,
+      tracking and displaying records. Cloud storage and cross-device syncing
+      have a second, optional choice. Accepting the terms or reading this
+      policy does not replace these approvals. Declining cloud permission
+      does not prevent fitness tracking on this device. Sending questions,
+      conversations, program inputs, permitted profile fields and selected
+      photos to OpenAI is disclosed separately and requires the separate AI
+      sharing permission. Step-sensor use also requires a separate choice.</li>
 </ul>
 
 <h2>5. Who it is shared with</h2>
@@ -297,11 +300,13 @@
 <h3>International transfers</h3>
 
 <p>
-  Google's and OpenAI's servers may be located outside Türkiye, including in
-  the United States. By creating an account and using AI Coach, you give
-  explicit consent to the data listed above being transferred abroad to
-  provide these services. If you do not use AI Coach, no data is sent to
-  OpenAI.
+Google and OpenAI servers may be outside Türkiye, including in the United
+States. Firebase account and subscription services, and cloud syncing or AI
+sharing you permit, may involve these providers processing the relevant
+data abroad. <strong>Creating an account or reading this policy does not
+constitute explicit consent to international transfers.</strong> Processing
+permissions do not replace the legal requirements for international
+transfers. If you do not use AI Coach, no data is sent to OpenAI.
 </p>
 
 <h2>6. How long it is kept</h2>
@@ -320,8 +325,9 @@ does not remove those security logs. See
       stored on our server. OpenAI's own retention periods apply on its side.</li>
   <li><strong>Subscription record:</strong> For as long as your account exists.
       When you delete your account the subscription link is deleted
-      immediately; the purchase-token digest and that day's question count are
-      deleted automatically after 48 hours.</li>
+      immediately; the purchase-token digest, usage dates and question/image/program usage and refund counters
+      are marked for automatic deletion after 48 hours. Firebase TTL cleanup
+      may complete later. The digest is not anonymous data.</li>
   <li><strong>Firebase security records:</strong> Google's own retention periods
       apply.</li>
 </ul>
@@ -358,7 +364,8 @@ does not remove those security logs. See
   <li>The OpenAI access key is kept only on the server; it is not inside the
       app.</li>
   <li>Data on your phone is kept in the private area Android reserves for the
-      app; other apps cannot read it.</li>
+      app; other apps cannot read it. In the updated version, the local
+      database and permission preferences are excluded from Android backup and device transfer.</li>
 </ul>
 
 <p>
@@ -407,6 +414,19 @@ account are explained and your consent is requested.</p>
   To use these rights, simply write to fitness.tracker.2027@gmail.com. We will
   respond within 30 days at the latest.
 </p>
+
+<h3>Fitness data permissions</h3>
+<p>In the updated app, use Profile → <strong>Fitness data and cloud sync</strong>
+to change cloud permission. Leave the cloud box unchecked and save to stop
+new syncs; transfers already started or queued in Firebase cannot be recalled.
+Existing cloud records are not deleted automatically; use a deletion request
+or account deletion. Re-enabling cloud permission also syncs existing fitness
+records from this device. <strong>Withdraw permissions</strong> also withdraws
+local fitness processing permission, clears AI and step permissions and signs
+you out on this device. Existing records remain until you request deletion.
+Your next sign-in requires new approval. Choices and their dates are stored
+only for this account on this device; old acceptance of terms is not treated
+as new consent. Change permissions on other devices separately.</p>
 
 <h2>11. Changes to this policy</h2>
 
