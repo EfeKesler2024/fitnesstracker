@@ -202,7 +202,8 @@ technical administration. The fitness information processed includes:
   <li>The <strong>purchase token</strong> issued by Google Play is stored on our
       server, linked to your account, and before each AI Coach request we ask
       Google Play whether the subscription is still active. The app itself
-      cannot read this token.</li>
+      receives this token from Google Play and sends it to our server to
+      verify the subscription.</li>
   <li>To calculate your allowances, we store an irreversible digest (hash) of
       the purchase token, the relevant usage dates and usage counters:
       <strong>3 questions a day, 2 photo analyses a day and 1 program a week</strong>.
