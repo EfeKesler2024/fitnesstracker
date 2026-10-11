@@ -13,7 +13,7 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Gizlilik Politikası</h1>
-  <p class="updated">Yürürlük tarihi: 10 Ekim 2026</p>
+  <p class="updated">Yürürlük tarihi: 11 Ekim 2026</p>
 </header>
 
 <p>
@@ -24,10 +24,14 @@
 
 <div class="box">
   <p><strong>Özet:</strong> Uygulamayı kullanmak için bir hesap açmanız gerekir.
-  Hesabınız ve girdiğiniz fitness verileri (profiliniz, öğünleriniz,
-  egzersizleriniz, su, adım ve kilo kayıtlarınız), <strong>ayrı bulut izniniz varsa Google Firebase
-  sunucularında hesabınıza bağlı olarak</strong> saklanır; böylece telefon
-  değiştirdiğinizde kayıtlarınız kaybolmaz. <strong>AI Koç'a sorduğunuz
+  Hesap oluşturma ve giriş işlemleri için hesap bilgileriniz Google Firebase
+  Authentication tarafından işlenir; bu işlemler isteğe bağlı fitness bulut
+  eşitlemesinden ayrıdır. Girdiğiniz fitness verileri (profiliniz, öğünleriniz,
+  egzersizleriniz, su, adım ve kilo kayıtlarınız) telefonunuzda tutulur ve
+  <strong>yalnızca ayrı bulut izniniz varsa Google Firebase sunucularında
+  hesabınıza bağlı olarak</strong> eşitlenir. Başka bir telefonda bu kayıtlara
+  erişmek için aynı hesaba giriş yapmanız ve bulut eşitlemesine izin vermeniz
+  gerekir. <strong>AI Koç'a sorduğunuz
   sorular</strong> ve o günkü sohbetiniz, cevaplanmak üzere OpenAI'ye gönderilir;
   <strong>onay verirseniz</strong> cevapların size göre olması için profil
   bilgileriniz (yaş, boy, kilo, cinsiyet, hareket düzeyi, hedef, günlük
@@ -248,7 +252,9 @@ engeller; hizmetin yetkili işletmeni teknik yönetim için erişim sağlayabili
 
 <ul>
   <li><strong>Sözleşmenin ifası:</strong> Hesap açmadan uygulama çalışmadığı
-      için e-posta ve şifre bilgisi zorunludur. Aboneliğin doğrulanması ve
+      için hesap oluşturma ve giriş bilgileri işlenir. E-posta/şifre ile
+      kayıtta şifre gerekir; Google ile girişte ayrı bir uygulama şifresi
+      gerekmez ve Google şifreniz bize iletilmez. Aboneliğin doğrulanması ve
       günlük hakkın sayılması da satın aldığınız hizmeti sunmak içindir.</li>
   <li><strong>Meşru menfaat:</strong> Firebase'in tuttuğu bağlantı kayıtları,
       hesapların kötüye kullanımını önlemek içindir. Satın alma jetonunun
@@ -345,8 +351,11 @@ genellikle 30 güne kadar, yasal zorunluluklarda daha uzun tutabilir.
 
 <ol>
   <li><strong>Uygulama içinden:</strong> Profil sekmesi → <em>Hesabımı sil</em>.
-      Onayladığınızda hesabınız, buluttaki verileriniz ve telefonunuzdaki
-      verileriniz silinir.</li>
+      Onayınız silme işlemini başlatır. İşlem başarıyla tamamlandığında
+      hesabınız, buluttaki fitness verileriniz ve işlemi yaptığınız telefondaki
+      yerel verileriniz silinir. Sunucudaki abonelik ve içerik bildirimi
+      temizliği arka planda tamamlanır; geçici hatalarda yeniden denenir.
+      Aşağıdaki saklama istisnaları ve hesap silme sayfası geçerlidir.</li>
   <li><strong>E-posta ile:</strong> fitness.tracker.2027@gmail.com adresine, hesabınızın e-posta
       adresinden silme talebi gönderin. Talebinizi en geç 30 gün içinde
       sonuçlandırırız.</li>
@@ -455,7 +464,7 @@ Başka cihazlarınızın izinlerini de ayrı ayrı değiştirmeniz gerekir.</p>
 </nav>
 
 <footer class="doc">
-  FitnessTracker — Gizlilik Politikası, 10 Ekim 2026
+  FitnessTracker — Gizlilik Politikası, 11 Ekim 2026
 </footer>
 
 </main>

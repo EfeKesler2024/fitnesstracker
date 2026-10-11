@@ -13,7 +13,7 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Privacy Policy</h1>
-  <p class="updated">Effective date: 10 October 2026</p>
+  <p class="updated">Effective date: 11 October 2026</p>
 </header>
 
 <p>
@@ -23,10 +23,14 @@
 </p>
 
 <div class="box">
-  <p><strong>Summary:</strong> You need an account to use the app. Your account
-  and the fitness data you enter (your profile, meals, workouts, water, step
-  and weight logs) are stored, <strong>with your separate cloud permission, on Google Firebase servers, linked to
-  your account</strong>, so your records are not lost when you change phones.
+  <p><strong>Summary:</strong> You need an account to use the app. Google Firebase
+  Authentication processes account information to create your account and sign
+  you in; these operations are separate from optional fitness cloud syncing.
+  The fitness data you enter (your profile, meals, workouts, water, step and
+  weight logs) is kept on your phone and synced to Google Firebase servers,
+  linked to your account, <strong>only with your separate cloud permission</strong>.
+  To access those records on another phone, sign in to the same account and
+  grant cloud syncing permission on that device.
   <strong>Questions you ask AI Coach</strong> and that day's conversation are sent
   to OpenAI to generate an answer; <strong>if you agree</strong>, your profile
   details (age, height, weight, sex, activity level, goal, daily targets) are
@@ -242,7 +246,10 @@ technical administration. The fitness information processed includes:
 
 <ul>
   <li><strong>Performance of a contract:</strong> The app does not work without
-      an account, so email and password are required. Verifying your
+      an account, so account creation and sign-in information are processed.
+      Email/password registration requires a password; Google sign-in does not
+      require a separate app password, and we do not receive your Google password.
+      Verifying your
       subscription and counting your daily allowance are needed to provide the
       service you paid for.</li>
   <li><strong>Legitimate interest:</strong> The connection records kept by
@@ -338,9 +345,13 @@ does not remove those security logs. See
 <p>There are two ways:</p>
 
 <ol>
-  <li><strong>In the app:</strong> Profile tab → <em>Delete my account</em>. Once
-      you confirm, your account, your data in the cloud and your data on the
-      phone are deleted.</li>
+  <li><strong>In the app:</strong> Profile tab → <em>Delete my account</em>.
+      Confirmation starts deletion. Once it completes successfully, your
+      account, cloud fitness data and local data on the phone where you
+      performed deletion are removed. Server-side cleanup of subscription
+      links and content reports completes in the background and is retried
+      after temporary failures. The retention exceptions above and the
+      account deletion page still apply.</li>
   <li><strong>By email:</strong> Send a deletion request to
       fitness.tracker.2027@gmail.com from your account's email address. We will
       complete your request within 30 days at the latest.</li>
@@ -451,7 +462,7 @@ as new consent. Change permissions on other devices separately.</p>
 </nav>
 
 <footer class="doc">
-  FitnessTracker — Privacy Policy, 10 October 2026
+  FitnessTracker — Privacy Policy, 11 October 2026
 </footer>
 
 </main>

@@ -13,12 +13,13 @@
 <header class="doc">
   <p class="app-name">FitnessTracker</p>
   <h1>Account and Data Deletion</h1>
-  <p class="updated">Updated: 10 October 2026</p>
+  <p class="updated">Updated: 11 October 2026</p>
 </header>
 
 <p>
-  You can delete your account and your data at any time. There are two ways,
-  and both have the same result.
+  You can request account and data deletion in the app or by email. Both
+  methods delete the account and cloud data; cleanup of local copies on
+  your phone is explained below.
 </p>
 
 <h2>Option 1 — In the app (fastest)</h2>
@@ -31,8 +32,14 @@
 </ol>
 
 <p>
-  As soon as you confirm, your account, your data in the cloud and the data on
-  this phone are deleted. This action <strong>cannot be undone</strong>.
+  Your confirmation starts the deletion process. Once it completes
+  successfully, your account, fitness data in the cloud and local data on
+  the phone where you performed deletion are removed. Server-side cleanup of
+  subscription links and content reports completes in the background and is
+  retried automatically after temporary failures. The retention exceptions
+  below still apply. Deleted data <strong>cannot be recovered</strong>.
+  If an error is shown, do not assume deletion has completed; check your
+  connection and try again.
 </p>
 
 <div class="box warn">
@@ -72,6 +79,14 @@
   <li>We will complete your request and let you know within
       <strong>30 days</strong> at the latest</li>
 </ul>
+
+<p>
+  An email request does not remotely clear local copies on your phone.
+  To remove those copies, clear the app's data or uninstall it on that
+  device. In-app account deletion clears local data on the phone where you
+  perform deletion; remote deletion of local copies on other devices is
+  not guaranteed. Clear those copies on each device as well.
+</p>
 
 <h2>What is deleted</h2>
 
@@ -153,8 +168,11 @@ account deletion are retried automatically.</p>
 <div class="box">
   <p>
     Your phone's <em>Settings → Apps → FitnessTracker → Storage → Clear
-    data</em> only deletes the copy <strong>on this phone</strong>. Because your
-    data is kept in the cloud, it comes back when you sign in again.
+    data</em> only deletes the copy <strong>on this phone</strong>. If you granted
+    cloud syncing permission and your records still exist in the cloud, they
+    may return when you sign in to the same account and grant cloud syncing
+    permission again. Records kept only on the device and never synced to
+    the cloud cannot be recovered this way.
   </p>
 </div>
 
@@ -166,7 +184,7 @@ account deletion are retried automatically.</p>
 </nav>
 
 <footer class="doc">
-  FitnessTracker — Account Deletion, 10 October 2026
+  FitnessTracker — Account Deletion, 11 October 2026
 </footer>
 
 </main>
