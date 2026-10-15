@@ -208,10 +208,10 @@ technical administration. The fitness information processed includes:
       Google Play whether the subscription is still active. The app itself
       receives this token from Google Play and sends it to our server to
       verify the subscription.</li>
-  <li>When you buy an <strong>extra question pack</strong>, we store an
+  <li>When you buy an <strong>extra question or program pack</strong>, we store an
       irreversible digest of that purchase's token, the pack type and the date,
       so the same purchase can never grant questions twice, plus a
-      <strong>remaining extra questions counter</strong> linked to your account.
+      <strong>remaining extra questions and extra programs counters</strong> linked to your account.
       The token is sent to Google Play for verification.</li>
   <li>To calculate your allowances, we store an irreversible digest (hash) of
       the purchase token, the relevant usage dates and usage counters:
@@ -374,9 +374,9 @@ does not remove those security logs. See
       immediately; the purchase-token digest, usage dates and question/image/program usage and refund counters
       are marked for automatic deletion after 48 hours. Firebase TTL cleanup
       may complete later. The digest is not anonymous data.</li>
-  <li><strong>Extra question pack records:</strong> For as long as your account
-      exists. When you delete your account the remaining extra questions
-      counter is deleted immediately; pack purchase digests are unlinked from
+  <li><strong>Extra question and program pack records:</strong> For as long as your account
+      exists. When you delete your account the remaining extras
+      counters are deleted immediately; pack purchase digests are unlinked from
       your account and marked for automatic deletion after 48 hours.</li>
   <li><strong>Firebase security records:</strong> Google's own retention periods
       apply.</li>
